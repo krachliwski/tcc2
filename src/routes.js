@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+//import GenerateQRCode from './pages/QRCode';
 import Error from './pages/Error';
 
 function RoutesApp(){
@@ -17,3 +18,6 @@ function RoutesApp(){
 }
 
 export default RoutesApp;
+
+
+//<Route path="/generateCode" element={<GenerateQRCode/>}/>
