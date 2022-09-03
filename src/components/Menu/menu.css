@@ -1,19 +1,14 @@
-.menu{
-    position: absolute;
-    top: 20px;
-    right: 0px;
+.Navbar {
+    background-color: #495057;
+}
+
+.Navbar .Logo {
+    justify-content: start;
+}
+
+.Nav .Letras {
+    font-size: 25px;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.menu a{
-    text-decoration: none;
-}
-
-.social{
-    margin-right: 14px;
-    display: flex;
-    right: 10%;
-    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
 }

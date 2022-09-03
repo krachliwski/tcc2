@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import { FiLink } from 'react-icons/fi';
 import './aboutUs.css';
-import Menu from '../../components/Menu';
+import { Link } from 'react-router-dom';
+import Menu from '../../components/Menu/menu';
 
-export default function Home(){
-  <div>
-    <h1>ABOUT US</h1>
-  </div>
+export default function AboutUs(){
+  return(
+    <div>
+      <Menu/>
+      <h1>ABOUT US</h1>
+      <Link to="/">
+        Voltar para Home
+      </Link>
+    </div>
+  )
 }
