@@ -23,8 +23,8 @@ class Menu extends Component {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Link className="Letras" href="#home">Página Principal</Nav.Link>
-                                <Nav.Link className="Letras" href="#link">Sobre Nós</Nav.Link>
-                                <Nav.Link className="Letras" href="#link">Detalhes do Projeto</Nav.Link>
+                                <Nav.Link className="Letras" href="#sobre">Sobre Nós</Nav.Link>
+                                <Nav.Link className="Letras" href="#details">Detalhes do Projeto</Nav.Link>
                                 <NavDropdown title="Menu" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="#action/3.1">Gerar QRCode</NavDropdown.Item>
                                     <NavDropdown.Divider />
