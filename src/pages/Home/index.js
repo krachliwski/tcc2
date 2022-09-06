@@ -30,15 +30,20 @@ export default function Home() {
     <br/>
     <h1 id='details'>Detalhes do Projeto</h1>
     <a> Já que chegou aqui, deve estar pensando, "Mas como seria feito todo o controle de saída e entrada dentro do local?". Pois bem, vamos lá...<br/>
-    O sistema funciona por meio da comunicação com sensores, e também com QRCodes.<br/>
+    O sistema funciona por meio da comunicação com sensores, e também com QRCodes.
+    <br/>
     <br/>
     <a> Cada vaga contém um sensor de proximidade e um QRCode, dessa forma, podemos detectar a presença de veículos, fazendo com que o sensor<br/>
-    envie um sinal para o sistema e marque a vaga como ocupada.<br/>
+    envie um sinal para o sistema e marque a vaga como ocupada.
+    <br/>
     Já os QRCodes são utilizados para a realização do pagamento por exemplo, ou também para o check-in, tendo basicamente a mesma função do sensor.<br/>
     <br/>
-    </a> Também há a possibilidade de fazer a reserva de vagas através do site, onde é realizada a consulta de vagas.<br/>
+    </a> Também há a possibilidade de fazer a reserva de vagas através do site, onde é realizada a consulta de vagas.
+    <br/>
     </a>
     
+    <br/>
+    <a>MATEUS VIADO</a>
   </div>
 )
 }

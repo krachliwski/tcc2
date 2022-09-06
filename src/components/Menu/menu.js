@@ -5,7 +5,7 @@ import './menu.css';
 import Logo from '../../images/logo.png';
 import { BsYoutube, BsInstagram } from 'react-icons/bs';
 
-class Menu extends Component {
+export default class Menu extends Component {
     render() {
         return (
             <div className="Menu">
@@ -45,5 +45,3 @@ class Menu extends Component {
         );
     }
 }
-
-export default Menu;
