@@ -33,7 +33,7 @@ export default class Menu extends Component {
                                     <BsInstagram color="#F000FF" size={24} />
                                 </a>
                                 <NavDropdown title="Menu" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Gerar QRCode</NavDropdown.Item>
+                                    <NavDropdown.Item href="generateQRCode">Gerar QRCode</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item href="#action/3.2">Consultar Vagas</NavDropdown.Item>
                                 </NavDropdown>

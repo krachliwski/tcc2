@@ -11,7 +11,7 @@ function RoutesApp() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/aboutUs" element={<AboutUs />} />
-                <Route path="/generateQRCode" element={<GenerateQRCode />} />
+                <Route path="/generateQRCode" element={<GenerateQRCode />}/>
                 <Route path="*" element={<Error />} />
             </Routes>
         </BrowserRouter>
