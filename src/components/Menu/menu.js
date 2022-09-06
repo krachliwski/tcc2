@@ -35,7 +35,7 @@ export default class Menu extends Component {
                                 <NavDropdown title="Menu" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="generateQRCode">Gerar QRCode</NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.2">Consultar Vagas</NavDropdown.Item>
+                                    <NavDropdown.Item href="parking">Consultar Vagas</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
                         </Navbar.Collapse>
