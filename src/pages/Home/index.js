@@ -43,7 +43,6 @@ export default function Home() {
     </a>
     
     <br/>
-    <a>MATEUS VIADO</a>
   </div>
 )
 }

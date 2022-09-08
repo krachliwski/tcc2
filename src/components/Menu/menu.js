@@ -23,9 +23,9 @@ export default class Menu extends Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="Nav">
-                                <Nav.Link className="Letras" href="#home">Página Principal</Nav.Link>
-                                <Nav.Link className="Letras" href="#sobre">Sobre Nós</Nav.Link>
-                                <Nav.Link className="Letras" href="#details">Detalhes do Projeto</Nav.Link>
+                                <Nav.Link className="Letras" href="http://localhost:3000">Página Principal</Nav.Link>
+                                <Nav.Link className="Letras" href="http://localhost:3000#sobre">Sobre Nós</Nav.Link>
+                                <Nav.Link className="Letras" href="http://localhost:3000#details">Detalhes do Projeto</Nav.Link>
                                 <a className="social" href="https://youtube.com">
                                     <BsYoutube color="#000" size={24} />
                                 </a>
