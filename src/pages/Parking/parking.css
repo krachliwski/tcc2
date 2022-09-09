@@ -1,6 +1,30 @@
-.Legenda {
-    font-size: 25px;
-    font-weight: bold;
+#Legenda {
+    font-size: 18px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
+}
+
+#b1 {
+    border-color: black;
+    border-width: 2px;
+    background-color: lime;
+    color: black;
+}
+
+.row {
+    height: 435px;
+    width: 1535px;
+    padding-left: 10px;
+}
+
+.SelectSpot {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding-left: 5px;
+}
+
+#v61 {
+    margin-top: 302px;
+    margin-left: 4px;
 }
