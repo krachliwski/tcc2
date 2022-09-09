@@ -30,19 +30,23 @@ export default class Menu extends Component {
                                     <Nav.Link className="Letras" href="/">Página Principal</Nav.Link>
                                     <Nav.Link className="Letras" href="/#sobre">Sobre Nós</Nav.Link>
                                     <Nav.Link className="Letras" href="/#details">Detalhes do Projeto</Nav.Link>
-                                    <a className="social" href="https://youtube.com">
-                                        <BsYoutube color="#000" size={24} />
-                                    </a>
-                                    <a className="social" href="https://instagram.com">
-                                        <BsInstagram color="#F000FF" size={24} />
-                                    </a>
-                                    <NavDropdown title="Menu" id="basic-nav-dropdown">
-                                        <NavDropdown.Item href="generateQRCode">Gerar QRCode</NavDropdown.Item>
-                                        <NavDropdown.Divider />
-                                        <NavDropdown.Item href="parking">Consultar Vagas</NavDropdown.Item>
-                                    </NavDropdown>
+                                    <div className="DropDown">
+                                        <NavDropdown title="Menu" id="basic-nav-dropdown">
+                                            <NavDropdown.Item href="generateQRCode">Gerar QRCode</NavDropdown.Item>
+                                            <NavDropdown.Divider />
+                                            <NavDropdown.Item href="parking">Consultar Vagas</NavDropdown.Item>
+                                        </NavDropdown>
+                                    </div>
                                 </Nav>
                             </Navbar.Collapse>
+                        </div>
+                        <div className="Redes">
+                            <a className="social" href="https://youtube.com">
+                                <BsYoutube color="#000" size={24} />
+                            </a>
+                            <a className="social" href="https://instagram.com">
+                                <BsInstagram color="#F000FF" size={24} />
+                            </a>
                         </div>
                     </Container>
                 </Navbar>

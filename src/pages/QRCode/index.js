@@ -27,7 +27,7 @@ function GenerateQRCode() {
     <div className="container">
 
       <Menu/>
-
+      
       <QRCode
         value={link}
       />
