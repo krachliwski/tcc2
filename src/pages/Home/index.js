@@ -1,8 +1,6 @@
 import React from 'react';
 import './home.css';
-import { BsYoutube, BsInstagram } from 'react-icons/bs';
 import Menu from '../../components/Menu/menu';
-import Logo from '../../images/logo.png';
 
 export default function Home() {
   return (
@@ -15,6 +13,9 @@ export default function Home() {
     <a> Somos um grupo de desenvolvedores que procura melhorar a vida das pessoas, assim como todos no geral.<br/>
       Porém trabalhamos na otimização de uma área específica, a qual é a de gerenciamento de estacionamentos.
     </a>
+    <br/>
+    <br/>
+    <br/>
     <br/>
     <a> Nosso diferencial é explorar ainda mais as tecnologias atuais, automatizando, otimizando e facilitando
       todo o processo o máximo possível.<br/>
@@ -37,6 +38,12 @@ export default function Home() {
     envie um sinal para o sistema e marque a vaga como ocupada.
     <br/>
     Já os QRCodes são utilizados para a realização do pagamento por exemplo, ou também para o check-in, tendo basicamente a mesma função do sensor.<br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <br/>
     </a> Também há a possibilidade de fazer a reserva de vagas através do site, onde é realizada a consulta de vagas.
     <br/>
