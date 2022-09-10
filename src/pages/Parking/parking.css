@@ -9,6 +9,7 @@
     border-width: 2px;
     background-color: lime;
     color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .row {
@@ -18,10 +19,16 @@
 }
 
 .SelectSpot {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    padding-left: 5px;
+    background-color: gray;
+    color: black;
+    padding: 6px;
+    width: 150px;
+    border: none;
+    font-size: 20px;
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #v61 {

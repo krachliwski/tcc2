@@ -9,7 +9,6 @@ import EFree from '../../images/EFree.png';
 import EOcup from '../../images/EOccup.png';
 import EIndisp from '../../images/EIndisp.png';
 import { Button } from 'react-bootstrap';
-import Select from 'react-select';
 
 export default function Parking() {
   return (
@@ -34,14 +33,21 @@ export default function Parking() {
         </div>
 
       </div>
-      <select className="SelectSpot">
-        <option value="">Selecione</option>
-        <option value="1">01</option>
-      </select>
+      <div id="root">
+        <select className="SelectSpot">
+          <option value="">Selecione</option>
+          <option value="61">61</option>
+          <option value="61">62</option>
+          <option value="61">63</option>
+          <option value="61">64</option>
+          <option value="61">65</option>
+          <option value="61">66</option>
+        </select>
+      </div>
       <div>
         <Button id="b1">Fazer Reserva</Button>
         <div>
-          
+
         </div>
       </div>
     </div>
