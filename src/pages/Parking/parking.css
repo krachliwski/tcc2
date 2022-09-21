@@ -1,3 +1,8 @@
+#Planta {
+    height: 435px;
+    width: 774px;
+}
+
 #Legenda {
     font-size: 18px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -35,3 +40,46 @@
     margin-top: 302px;
     margin-left: 4px;
 }
+
+#b61 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: -4px;
+    border-color: transparent;
+}
+
+#b62 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 19px;
+    border-color: transparent;
+}
+
+#b63 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 13px;
+    border-color: transparent;
+}
+
+#b64 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 13px;
+    border-color: transparent;
+}
+
+#b65 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 15px;
+    border-color: transparent;
+}
+
+#b66 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 16px;
+    border-color: transparent;
+}
+
