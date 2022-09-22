@@ -28,7 +28,7 @@ export default function Parking() {
             .then((willDelete) => {
               if (willDelete) {
                 swal("Vaga Reservada!!", {
-                  icon: "success",
+                  icon: "success"
                 });
               } else {
                 swal("Reserva Cancelada", {
@@ -37,12 +37,15 @@ export default function Parking() {
               }
             });
           }}
-            id="b61"><img
+            id="b61">
+              
+              <img
               alt="EFree"
               src={EFree}
               width="20"
-              height="25"
-            /></button>
+              height="25"/>
+            
+            </button>
           <button onClick={() => { swal("Oops!!", "Vaga Indisponível", "error"); }}
             id="b62"><img
               alt="EOcup"
