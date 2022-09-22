@@ -31,7 +31,9 @@ export default function Parking() {
                   icon: "success",
                 });
               } else {
-                swal("Reserva Cancelada");
+                swal("Reserva Cancelada", {
+                  icon: "error"
+                });
               }
             });
           }}
@@ -75,7 +77,9 @@ export default function Parking() {
                   icon: "success",
                 });
               } else {
-                swal("Reserva Cancelada");
+                swal("Reserva Cancelada", {
+                  icon: "error"
+                });
               }
             });
           }}
@@ -98,7 +102,9 @@ export default function Parking() {
                   icon: "success",
                 });
               } else {
-                swal("Reserva Cancelada");
+                swal("Reserva Cancelada", {
+                  icon: "error"
+                });
               }
             });
           }}
