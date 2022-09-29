@@ -1,12 +1,22 @@
 #Planta {
     height: 435px;
     width: 774px;
+    background-repeat: no-repeat;
 }
 
 #Legenda {
     font-size: 18px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#fundo {
+    background-image: url(../../images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #b1 {

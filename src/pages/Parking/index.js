@@ -11,12 +11,16 @@ import EIndisp from '../../images/EIndisp.png';
 import { Button } from 'react-bootstrap';
 import swal from 'sweetalert';
 
-export default function Parking() {
+export default function Parking(){
   return (
-    <div>
+    <div class="main">
       <Menu />
       <h1>Parking</h1>
-      <div class="row">
+      <div id="Legenda">
+          <a><img alt="Free" src={Free} width="28" height="40" />  Vaga Livre</a>
+          <a><img alt="Ocup" src={Ocup} width="28" height="40" />  Vaga Ocupada</a>
+          <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível ou Reservada</a>
+        </div>
         <div id="Planta" style={{ backgroundImage: `url(${Planta})` }} class="col">
           <button onClick={() => {
             swal({
@@ -118,21 +122,7 @@ export default function Parking() {
             height="25"
           /></button>
         </div>
-        <div class="col" id="Legenda">
-          <div class="col"><img alt="Free" src={Free} width="28" height="40" />  <a>Vaga Livre</a></div>
-          <br />
-          <div class="col"><img alt="Ocup" src={Ocup} width="28" height="40" />  <a>Vaga Ocupada</a></div>
-          <br />
-          <div class="col"><img alt="Indisp" src={Indisp} width="28" height="40" />  <a>Vaga Indisponível ou Reservada</a></div>
-        </div>
-
-      </div>
-      <div id="root">
-      </div>
-      <div>
-        <div>
-        </div>
-      </div>
+        
     </div>
   )
 }
