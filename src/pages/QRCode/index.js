@@ -9,38 +9,38 @@ function GenerateQRCode() {
   const [link, setLink] = useState('')
   const [qrcodeLink, setQrcodeLink] = useState('')
 
-  function handleGenerate(link_url){
-    QRCodeLink.toDataURL(link_url,{
+  function handleGenerate(link_url) {
+    QRCodeLink.toDataURL(link_url, {
       width: 600,
       margin: 3,
-    }, function (err, url){
+    }, function (err, url) {
       setQrcodeLink(url);
     })
   }
 
-  function handleQrcode(e){
+  function handleQrcode(e) {
     setLink(e.target.value);
     handleGenerate(e.target.value);
   }
 
   return (
     <div className="container">
+    
+      <Menu />
+      <div class="QR">
+        <QRCode
+          value={link}
+        />
 
-      <Menu/>
-      
-      <QRCode
-        value={link}
-      />
+        <input
+          className="input"
+          placeholder="Digite seu link..."
+          value={link}
+          onChange={(e) => handleQrcode(e)}
+        />
 
-      <input
-        className="input"
-        placeholder="Digite seu link..."
-        value={link}
-        onChange={ (e) => handleQrcode(e)}
-      />
-
-      <a href={qrcodeLink} download={`qrcode.png`}>Baixar QRCode</a>
-
+        <a href={qrcodeLink} download={`qrcode.png`}>Baixar QRCode</a>
+      </div>
     </div>
   );
 }

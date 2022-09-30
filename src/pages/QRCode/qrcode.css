@@ -8,3 +8,17 @@
     outline: none;
     border: 1px solid #b6b6b6;
   }
+
+
+.QR {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.input {
+  height: min-content;
+}
