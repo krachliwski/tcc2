@@ -1,6 +1,8 @@
 .Navbar {
-    background-color: #495057;
+    background-color: transparent;
 }
+
+/*background-color: #495057;*/
 
 .Nav {
     display: flex;

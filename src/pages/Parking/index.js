@@ -12,6 +12,9 @@ import { Button } from 'react-bootstrap';
 import swal from 'sweetalert';
 
 export default function Parking(){
+  const sucessImage = <img src={EOcup} alt="EOcup" width="20" height="25"/>;
+  const defaultImage = <img src={EFree} alt="EFree" width="20" height="25"/>;
+  const indispImage = <img src={EIndisp} alt="EIndisp" width="20" height="25"/>;
   return (
     <div class="main">
       <Menu />
@@ -43,34 +46,21 @@ export default function Parking(){
           }}
             id="b61">
               
-              <img
-              alt="EFree"
-              src={EFree}
-              width="20"
-              height="25"/>
+              {defaultImage}
             
             </button>
           <button onClick={() => { swal("Oops!!", "Vaga Indisponível", "error"); }}
-            id="b62"><img
-              alt="EOcup"
-              src={EOcup}
-              width="20"
-              height="25"
-            /></button>
+            id="b62">
+              {sucessImage}
+            </button>
           <button onClick={() => { swal("Oops!!", "Vaga Indisponível", "error"); }}
-            id="b63"><img
-              alt="EOcup"
-              src={EOcup}
-              width="20"
-              height="25"
-            /></button>
+            id="b63">
+              {sucessImage}
+            </button>
           <button onClick={() => { swal("Oops!!", "Vaga Indisponível", "error"); }}
-            id="b64"><img
-              alt="EIndisp"
-              src={EIndisp}
-              width="20"
-              height="25"
-            /></button>
+            id="b64">
+              {indispImage}
+            </button>
           <button onClick={() => {
             swal({
               title: "Quer mesmo reservar esta vaga?",
@@ -90,12 +80,9 @@ export default function Parking(){
               }
             });
           }}
-            id="b65"><img
-              alt="EFree"
-              src={EFree}
-              width="20"
-              height="25"
-            /></button>
+            id="b65">
+              {defaultImage}
+            </button>
           <button onClick={() => {
             swal({
               title: "Quer mesmo reservar esta vaga?",
@@ -115,12 +102,9 @@ export default function Parking(){
               }
             });
           }}
-          id="b66"><img
-            alt="EFree"
-            src={EFree}
-            width="20"
-            height="25"
-          /></button>
+          id="b66">
+            {defaultImage}
+          </button>
         </div>
         
     </div>
