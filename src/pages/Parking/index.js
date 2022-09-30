@@ -106,7 +106,6 @@ export default function Parking(){
             {defaultImage}
           </button>
         </div>
-        
     </div>
   )
 }
