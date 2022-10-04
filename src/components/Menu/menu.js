@@ -45,7 +45,7 @@ export default class Menu extends Component {
                                     <BsYoutube color="#000" size={24} />
                                 </a>
                                 <a className="social" href="https://instagram.com">
-                                    <BsInstagram color="#F000FF" size={24} />
+                                    <BsInstagram color="#000" size={24} />
                                 </a>
                             </div>
                         </Container>

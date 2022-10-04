@@ -24,7 +24,7 @@ export default function Parking(){
           <a><img alt="Ocup" src={Ocup} width="28" height="40" />  Vaga Ocupada</a>
           <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível ou Reservada</a>
         </div>
-        <div id="Planta" style={{ backgroundImage: `url(${Planta})` }} class="col">
+        <div id="Planta" style={{ backgroundImage: `url(${Planta})` }}>
           <button onClick={() => {
             swal({
               title: "Quer mesmo reservar esta vaga?",
