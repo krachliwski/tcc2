@@ -11,15 +11,16 @@ import EIndisp from '../../images/EIndisp.png';
 import { Button } from 'react-bootstrap';
 import swal from 'sweetalert';
 
-export default function Parking(){
-  const sucessImage = <img src={EOcup} alt="EOcup" width="20" height="25"/>;
-  const defaultImage = <img src={EFree} alt="EFree" width="20" height="25"/>;
-  const indispImage = <img src={EIndisp} alt="EIndisp" width="20" height="25"/>;
+export default function Parking() {
+  const sucessImage = <img src={EOcup} alt="EOcup" width="20" height="25" />;
+  const defaultImage = <img src={EFree} alt="EFree" width="20" height="25" />;
+  const indispImage = <img src={EIndisp} alt="EIndisp" width="20" height="25" />;
   return (
     <div class="main">
       <Menu />
-      <h1>Parking</h1>
-      <div id="Legenda">
+      <div class="div-h1">
+        <h1>Parking</h1>
+        <div id="Legenda">
           <a><img alt="Free" src={Free} width="28" height="40" />  Vaga Livre</a>
           <a><img alt="Ocup" src={Ocup} width="28" height="40" />  Vaga Ocupada</a>
           <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível ou Reservada</a>
@@ -32,35 +33,35 @@ export default function Parking(){
               buttons: true,
               dangerMode: true,
             })
-            .then((willDelete) => {
-              if (willDelete) {
-                swal("Vaga Reservada!!", {
-                  icon: "success"
-                });
-              } else {
-                swal("Reserva Cancelada", {
-                  icon: "error"
-                });
-              }
-            });
+              .then((willDelete) => {
+                if (willDelete) {
+                  swal("Vaga Reservada!!", {
+                    icon: "success"
+                  });
+                } else {
+                  swal("Reserva Cancelada", {
+                    icon: "error"
+                  });
+                }
+              });
           }}
-            id="b61">
-              
-              {defaultImage}
-            
-            </button>
+            id="b61" className="spots">
+
+            {defaultImage}
+
+          </button>
           <button onClick={() => { swal("Oops!!", "Vaga Indisponível", "error"); }}
-            id="b62">
-              {sucessImage}
-            </button>
+            id="b62" className="spots">
+            {sucessImage}
+          </button>
           <button onClick={() => { swal("Oops!!", "Vaga Indisponível", "error"); }}
-            id="b63">
-              {sucessImage}
-            </button>
+            id="b63" className="spots">
+            {sucessImage}
+          </button>
           <button onClick={() => { swal("Oops!!", "Vaga Indisponível", "error"); }}
-            id="b64">
-              {indispImage}
-            </button>
+            id="b64" className="spots">
+            {indispImage}
+          </button>
           <button onClick={() => {
             swal({
               title: "Quer mesmo reservar esta vaga?",
@@ -68,21 +69,21 @@ export default function Parking(){
               buttons: true,
               dangerMode: true,
             })
-            .then((willDelete) => {
-              if (willDelete) {
-                swal("Vaga Reservada!!", {
-                  icon: "success",
-                });
-              } else {
-                swal("Reserva Cancelada", {
-                  icon: "error"
-                });
-              }
-            });
+              .then((willDelete) => {
+                if (willDelete) {
+                  swal("Vaga Reservada!!", {
+                    icon: "success",
+                  });
+                } else {
+                  swal("Reserva Cancelada", {
+                    icon: "error"
+                  });
+                }
+              });
           }}
-            id="b65">
-              {defaultImage}
-            </button>
+            id="b65" className="spots">
+            {defaultImage}
+          </button>
           <button onClick={() => {
             swal({
               title: "Quer mesmo reservar esta vaga?",
@@ -90,22 +91,23 @@ export default function Parking(){
               buttons: true,
               dangerMode: true,
             })
-            .then((willDelete) => {
-              if (willDelete) {
-                swal("Vaga Reservada!!", {
-                  icon: "success",
-                });
-              } else {
-                swal("Reserva Cancelada", {
-                  icon: "error"
-                });
-              }
-            });
+              .then((willDelete) => {
+                if (willDelete) {
+                  swal("Vaga Reservada!!", {
+                    icon: "success",
+                  });
+                } else {
+                  swal("Reserva Cancelada", {
+                    icon: "error"
+                  });
+                }
+              });
           }}
-          id="b66">
+            id="b66" className="spots">
             {defaultImage}
           </button>
         </div>
+      </div>
     </div>
   )
 }
