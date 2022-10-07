@@ -20,7 +20,7 @@ export default class Menu extends Component {
                                         width="80"
                                         height="80"
                                     />{' '}
-                                    E-Flanelinha
+                                    <a className="BrandName">E-Flanelinha</a>
                                 </Navbar.Brand>
                             </div>
                             <div className="Nav">

@@ -1,5 +1,5 @@
 .Navbar {
-  background-color: transparent;
+  background-color: #333333;
 }
 
 .back-Nav {
@@ -18,20 +18,30 @@
 
 .Nav .Letras {
   font-size: 25px;
-  font-weight: bold;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: #212529;
-  border-radius: 10px;
+  color: black;
+  text-shadow: 0 0 5px yellow;
+  border-radius: 100px;
   margin-right: 90px;
 }
 
+.BrandName, .BrandName:hover {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: yellow;
+  text-decoration: none;
+  font-size: 23px;
+  text-shadow: 0 0 15px black;
+}
 
 .Nav .Letras:hover {
-  color: #2B7B8A;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: yellow;
   font-weight: normal;
-  border-radius: 10px;
+  border-radius: 100px;
   transition: 0.4s;
+  text-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: yellow;
 }
 
 
@@ -43,7 +53,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: black;
+  background-color: yellow;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -92,26 +102,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background: linear-gradient(80deg,
-      #ff2400,
-      #e81d1d,
-      #e8b71d,
-      #e3e81d,
-      #1de840,
-      #1ddde8,
-      #2b1de8,
-      #dd00f3,
-      #dd00f3,
-
-      #ff2400,
-      #e81d1d,
-      #e8b71d,
-      #e3e81d,
-      #1de840,
-      #1ddde8,
-      #2b1de8,
-      #dd00f3);
-  /* background-color: red; */
+  background-color: yellow;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -123,6 +114,8 @@
 
 #basic-nav-dropdown {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: yellow;
+  text-shadow: 0 0 5px black;
 }
 
 .DropDown {

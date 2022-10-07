@@ -1,10 +1,13 @@
 .div-h1 {
-    margin-top: 10px;
+    padding-top: 25px;
     padding-left: 300px;
     padding-right: 300px;
 }
 
 h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    text-shadow: 0 0 5px yellow;
     text-align: center;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -22,7 +25,7 @@ h1 {
     margin-left: 50px;
     border-radius: 50px;
     border-style: solid;
-    border-color: #247FFF;
+    border-color: yellow;
     border-width: 3px;
 }
 
@@ -31,12 +34,14 @@ h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     margin-bottom: 25px;
 }
 
-#fundo {
+.div-h1 {
     background-image: url(../../images/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
