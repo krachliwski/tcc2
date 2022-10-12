@@ -20,7 +20,7 @@ export default class Menu extends Component {
                                         width="80"
                                         height="80"
                                     />{' '}
-                                    E-Flanelinha
+                                    <a className="BrandName">E-Flanelinha</a>
                                 </Navbar.Brand>
                             </div>
                             <div className="Nav">
@@ -45,7 +45,7 @@ export default class Menu extends Component {
                                     <BsYoutube color="#000" size={24} />
                                 </a>
                                 <a className="social" href="https://instagram.com">
-                                    <BsInstagram color="#F000FF" size={24} />
+                                    <BsInstagram color="#000" size={24} />
                                 </a>
                             </div>
                         </Container>

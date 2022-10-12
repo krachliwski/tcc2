@@ -1,138 +1,130 @@
 .Navbar {
-    background-color: transparent;
+  background-color: #333333;
 }
 
-.back-Nav{
-    background: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(2px);
+.back-Nav {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
 }
 
 /*background-color: #495057;*/
 
 .Nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
 }
 
 .Nav .Letras {
-    font-size: 25px;
-    font-weight: bold;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #212529;
-    border-radius: 10px;
-    margin-right: 90px;
+  font-size: 25px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: black;
+  text-shadow: 0 0 5px yellow;
+  border-radius: 100px;
+  margin-right: 90px;
 }
 
+.BrandName, .BrandName:hover {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: yellow;
+  text-decoration: none;
+  font-size: 23px;
+  text-shadow: 0 0 15px black;
+}
 
 .Nav .Letras:hover {
-    color: #2B7B8A;
-    background-color: rgba(255, 255, 255, 0.1);
-    font-weight: normal;
-    border-radius: 10px;
-    transition: 0.4s;
+  color: yellow;
+  font-weight: normal;
+  border-radius: 100px;
+  transition: 0.4s;
+  text-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: yellow;
 }
 
 
 .Letras:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: black;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: yellow;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
 .Letras:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
 .Logo {
-    padding-left: 0px;
+  padding-left: 0px;
 }
 
 .Logo:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background: yellow;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: yellow;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
 .Logo:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
 .Redes {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .social {
-    padding-right: 25px;
+  padding-right: 25px;
 }
 
 .social:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(80deg,
-    #ff2400,
-    #e81d1d,
-    #e8b71d,
-    #e3e81d,
-    #1de840,
-    #1ddde8,
-    #2b1de8,
-    #dd00f3,
-    #dd00f3,
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: yellow;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
 
-    #ff2400,
-    #e81d1d,
-    #e8b71d,
-    #e3e81d,
-    #1de840,
-    #1ddde8,
-    #2b1de8,
-    #dd00f3);
-    /* background-color: red; */
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
 .social:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
 #basic-nav-dropdown {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: yellow;
+  text-shadow: 0 0 5px black;
 }
 
 .DropDown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
- }
-
+  display: block;
+  margin-top: 0;
+}
