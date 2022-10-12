@@ -24,22 +24,29 @@ function GenerateQRCode() {
   }
 
   return (
-    <div className="container">
-    
+    <div className="container-home">
+
       <Menu />
-      <div class="QR">
-        <QRCode
-          value={link}
-        />
 
-        <input
-          className="input"
-          placeholder="Digite seu link..."
-          value={link}
-          onChange={(e) => handleQrcode(e)}
-        />
+      <div class="container-QR">
+        <div>
+          <QRCode
+            value={link}
+          />
+        </div>
 
-        <a href={qrcodeLink} download={`qrcode.png`}>Baixar QRCode</a>
+        <div class="btnArea">
+          <input
+            className="input"
+            placeholder="Digite seu link..."
+            value={link}
+          />
+
+          <button class="btn" onClick={(e) => handleQrcode(e)}><a>Gerar QRCode</a></button>
+
+          <button class="btn" href={qrcodeLink} download={`qrcode.png`}><a>Baixar QRCode</a></button>
+        </div>
+
       </div>
     </div>
   );
