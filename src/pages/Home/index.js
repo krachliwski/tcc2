@@ -37,7 +37,7 @@ export default function Home() {
               envie um sinal para o sistema e marque a vaga como ocupada.
               <br />
               Já os QRCodes são utilizados para a realização do pagamento por exemplo, ou também para o check-in, tendo basicamente a mesma função do sensor.<br />
-            </a> Também há a possibilidade de fazer a reserva de vagas através deste site, onde é realizada a <button>consulta de vagas</button>.
+            </a> Também há a possibilidade de fazer a reserva de vagas através deste site, onde é realizada a <button className="btn-parking" href="parking">consulta de vagas</button>.
             <br />
           </a>
 

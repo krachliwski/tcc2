@@ -1,3 +1,9 @@
+.container-home {
+  background-image: url(../../images/background1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .container-QR {
   justify-content: center;
   align-items: center;
