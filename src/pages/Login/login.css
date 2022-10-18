@@ -1,0 +1,23 @@
+thead {
+	background: #ccc;
+}
+
+label {
+	margin-top: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.Login-Box {
+    padding-top: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.Back {
+    background-image: url(../../images/background_old2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

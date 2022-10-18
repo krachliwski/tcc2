@@ -5,6 +5,7 @@ import AboutUs from './pages/AboutUs';
 import GenerateQRCode from './pages/QRCode';
 import Parking from './pages/Parking';
 import Error from './pages/Error';
+import Login from './pages/Login';
 
 function RoutesApp() {
     return (
@@ -14,6 +15,7 @@ function RoutesApp() {
                 <Route path="/aboutUs" element={<AboutUs />} />
                 <Route path="/generateQRCode" element={<GenerateQRCode />}/>
                 <Route path="/parking" element={<Parking />}/>
+                <Route path="/login" element={<Login />}/>
                 <Route path="*" element={<Error />} />
             </Routes>
         </BrowserRouter>

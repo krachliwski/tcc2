@@ -30,6 +30,7 @@ export default class Menu extends Component {
                                         <Nav.Link className="Letras" href="/">Página Principal</Nav.Link>
                                         <Nav.Link className="Letras" href="/#sobre">Sobre Nós</Nav.Link>
                                         <Nav.Link className="Letras" href="/#details">Detalhes do Projeto</Nav.Link>
+                                        <Nav.Link className="Letras" href="login">Log-In</Nav.Link>
                                         <div className="DropDown">
                                             <NavDropdown title="Menu" id="basic-nav-dropdown">
                                                 <NavDropdown.Item href="generateQRCode">Gerar QRCode</NavDropdown.Item>
@@ -39,14 +40,6 @@ export default class Menu extends Component {
                                         </div>
                                     </Nav>
                                 </Navbar.Collapse>
-                            </div>
-                            <div className="Redes">
-                                <a className="social" href="https://youtube.com">
-                                    <BsYoutube color="#000" size={24} />
-                                </a>
-                                <a className="social" href="https://instagram.com">
-                                    <BsInstagram color="#000" size={24} />
-                                </a>
                             </div>
                         </Container>
                     </Navbar>
