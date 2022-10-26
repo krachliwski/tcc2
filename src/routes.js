@@ -22,8 +22,11 @@ function RoutesApp() {
     )
 }
 
-//------------------------------------------------------------------------------------------------------
+export default RoutesApp;
 
+
+//------------------------------------------------------------------------------------------------------
+/*
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
@@ -51,3 +54,4 @@ app.listen(3000, () => {
 });
 
 export default RoutesApp;
+*/
