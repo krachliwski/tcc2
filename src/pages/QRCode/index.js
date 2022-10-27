@@ -24,7 +24,7 @@ function GenerateQRCode() {
   }
 
   return (
-    <div className="container-home">
+    <div className="container-qrcode">
 
       <Menu />
 

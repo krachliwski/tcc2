@@ -6,9 +6,9 @@ import swal from 'sweetalert';
 
 export default function login() {
     return (
-        <div>
+        <div className="Back">
             <Menu />
-            <div className="Back">
+            <div>
                 <div className="Login-Box">
                     <form name="formLogin" method="post" data-parsley-validate="">
                         <label for="login">Login:</label>

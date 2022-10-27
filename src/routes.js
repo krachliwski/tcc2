@@ -23,35 +23,3 @@ function RoutesApp() {
 }
 
 export default RoutesApp;
-
-
-//------------------------------------------------------------------------------------------------------
-/*
-const express = require('express');
-const bodyParser = require('body-parser');
-const mysql = require('mysql');
-
-const connection = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'qwe123',
-    database: 'estacionamento'
-});
-
-const app = express();
-
-app.get('/usuario', function (req, res) {
-    connection.getConnection(function (err, connection) {
-        connection.query('SELECT * FROM usuario', function (error, results, fields) {
-            res.send(results)
-        });
-    });
-});
-
-// Iniciando o servidor.
-app.listen(3000, () => {
-    console.log('http://localhost:3000/usuario');
-});
-
-export default RoutesApp;
-*/

@@ -82,6 +82,13 @@ h1 {
     transform: translateY(-0.3em);
 }
 
+.Edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
 #b61 {
     background-color: transparent;
     margin-top: 300px;

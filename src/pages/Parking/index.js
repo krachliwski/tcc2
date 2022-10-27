@@ -107,6 +107,9 @@ export default function Parking() {
             {defaultImage}
           </button>
         </div>
+        <div className="Edit">
+          <Button href="login">Gerenciar Vagas</Button>
+        </div>
       </div>
     </div>
   )
