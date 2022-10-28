@@ -1,6 +1,7 @@
 import React from 'react';
 import './login.css';
 import Menu from '../../components/Menu/menu';
+import { Button } from 'react-bootstrap';
 import Axios from 'axios';
 import swal from 'sweetalert';
 
@@ -17,7 +18,10 @@ export default function login() {
                         <label for="senha">Senha:</label>
                         <input type="password" name="senha" id="senha" class="form-control" required data-parsley-required-message="Por favor, preencha este campo"></input>
                         <br />
-                        <button type="submit" class="btn btn-success w-100">Efetuar Login</button>
+                        <div className="buttons">
+                        <Button type="submit" class="btn btn-success w-100">Efetuar Login</Button>
+                        <Button href="signin" class="btn btn-success w-100">Cadastrar</Button>
+                        </div>
                     </form>
                 </div>
             </div>
