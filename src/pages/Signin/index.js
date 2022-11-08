@@ -4,7 +4,7 @@ import Menu from '../../components/Menu/menu';
 import Axios from 'axios';
 import swal from 'sweetalert';
 
-export default function login() {
+export function database() {
     const [values, setValues] = useState;
 
     const handleChangeValues = (value) => {
@@ -22,7 +22,9 @@ export default function login() {
             console.log(response);
         });
     };
+}
 
+export default function login() {
     return (
         <div className="Back">
             <Menu />
