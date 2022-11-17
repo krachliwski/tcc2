@@ -26,78 +26,37 @@ export default function Parking() {
           <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível ou Reservada</a>
         </div>
         <div id="Planta" style={{ backgroundImage: `url(${Planta})` }}>
-          <button onClick={() => {
-            swal({
-              title: "Quer mesmo reservar esta vaga?",
-              icon: "warning",
-              buttons: true,
-              dangerMode: true,
-            })
-              .then((willDelete) => {
-                if (willDelete) {
-                  swal("Vaga Reservada!!", {
-                    icon: "success"
-                  });
-                } else {
-                  swal("Reserva Cancelada", {
-                    icon: "error"
-                  });
-                }
-              });
-          }}
-            id="b61" className="spots">
+          <button id="b61" className="spots">
 
             {defaultImage}
 
           </button>
-          <button onClick={() => { swal("Oops!!", "Vaga Indisponível", "error"); }}
-            id="b62" className="spots">
+          <button id="b62" className="spots">
             {sucessImage}
           </button>
-          <button onClick={() => { swal("Oops!!", "Vaga Indisponível", "error"); }}
-            id="b63" className="spots">
+          <button id="b63" className="spots">
             {sucessImage}
           </button>
-          <button onClick={() => { swal("Oops!!", "Vaga Indisponível", "error"); }}
-            id="b64" className="spots">
+          <button id="b64" className="spots">
             {indispImage}
           </button>
-          <button onClick={() => {
-            swal({
-              title: "Quer mesmo reservar esta vaga?",
-              icon: "warning",
-              buttons: true,
-              dangerMode: true,
-            })
-              .then((willDelete) => {
-                if (willDelete) {
-                  swal("Vaga Reservada!!", {
-                    icon: "success",
-                  });
-                } else {
-                  swal("Reserva Cancelada", {
-                    icon: "error"
-                  });
-                }
-              });
-          }}
-            id="b65" className="spots">
+          <button id="b65" className="spots">
             {defaultImage}
           </button>
           <button onClick={() => {
             swal({
-              title: "Quer mesmo reservar esta vaga?",
+              title: "Quer mesmo indisponibilizar esta vaga?",
               icon: "warning",
               buttons: true,
               dangerMode: true,
             })
               .then((willDelete) => {
                 if (willDelete) {
-                  swal("Vaga Reservada!!", {
+                  swal("Vaga indisponibilizar!", {
                     icon: "success",
                   });
                 } else {
-                  swal("Reserva Cancelada", {
+                  swal("Ação cancelada!", {
                     icon: "error"
                   });
                 }

@@ -76,12 +76,6 @@ h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.spots:hover,
-.spots:focus {
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.3em);
-}
-
 .Edit {
     display: flex;
     justify-content: center;
@@ -127,6 +121,13 @@ h1 {
 #b66 {
     background-color: transparent;
     margin-top: 300px;
+    margin-left: 16px;
+    border-color: transparent;
+}
+
+#b67 {
+    background-color: transparent;
+    margin-top: 100px;
     margin-left: 16px;
     border-color: transparent;
 }

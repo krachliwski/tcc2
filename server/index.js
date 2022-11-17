@@ -3,28 +3,68 @@ const express = require('express');
 const app = express();
 const mysql = require("mysql2");
 const cors = require("cors");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 const db = mysql.createPool({
-    host: "localhost",
-    user: "root",
-    password: "qwe123",
-    database: "estacionamento"
+  host: "localhost",
+  user: "root",
+  password: "qwe123",
+  database: "estacionamento"
 });
 
 app.use(cors());
 app.use(express.json());
 
-app.post("/usuario", (req, res) => {
-    const { nome } = req.body;
-    const { senha } = req.body;
 
-    let SQL = "INSERT INTO usuario (nome, senha) VALUES (?, ?)";
+app.post("/register", (req, res) => {
+  const nome = req.body.nome;
+  const senha = req.body.senha;
 
-    db.query(SQL, [nome, senha], (err, result) => {
-        console.log(err);
+  db.query("SELECT * FROM usuario WHERE nome = ?", [nome],
+    (err, result) => {
+      if (err) {
+        res.send(err);
+      }
+      if (result.length == 0) {
+        bcrypt.hash(senha, saltRounds, (err, hash) => {
+          db.query("INSERT INTO usuario (nome, senha) VALUES (?, ?)",
+            [nome, hash],
+            (err, result) => {
+              if (err) {
+                res.send(err);
+              }
+              res.send({ msg: "Cadastrado com sucesso" })
+            });
+        })
+      } else {
+        res.send({ msg: "Usuário já existente" })
+      }
     })
 });
 
-app.listen(3000, () => {
-    console.log('http://localhost:3000/usuario');
+app.post("/login", (req, res) => {
+  const nome = req.body.nome;
+  const senha = req.body.senha;
+
+  db.query("SELECT * FROM usuario WHERE nome = ?", [nome], (err, result) => {
+    if (err) {
+      res.send(err);
+    }
+    if (result.length > 0) {
+      bcrypt.compare(senha, result[0].senha, (err, result) => {
+        if (result) {
+          res.send("Usuário Logado!");
+        } else {
+          res.send("Senha Incorreta!");
+        }
+      });
+    } else {
+      res.send({ msg: "Usuário não registrado! Registre nos campos abaixo" });
+    }
+  });
+});
+
+app.listen(3001, () => {
+  console.log("TÁ RODANDO JÁ MISÉRA!!!");
 });

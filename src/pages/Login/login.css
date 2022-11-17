@@ -5,7 +5,13 @@ thead {
 label {
 	margin-top: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    text-shadow: 0 0 5px white;
+    text-shadow: 0 0 5px rgb(92, 202, 239);
+}
+
+h3 {
+    margin-top: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 0 0 5px rgb(92, 202, 239);
 }
 
 .Login-Box {
@@ -33,12 +39,12 @@ label {
     align-items: center;
 }
 
-#login:invalid {
-    animation: shake .3s;
-}
 
-@keyframes shake {
-    25% { transform: translateX(4px) }
-    50% { transform: translateX(-4px) }
-    75% { transform: translateX(4px) }
+.form-erro {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    border-color: black;
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 0 0 2px white;
 }
