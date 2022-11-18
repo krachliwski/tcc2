@@ -13,7 +13,18 @@ function login() {
             nome: values.nome,
             senha: values.senha
         }).then((response) => {
-            swal.fire({icon: 'info', title: response.data, showConfirmButton: false, timer: 1500});
+            if (response.data == "Usuário Logado!") {
+                swal.fire({
+                    title: response.data,
+                    type: "success"
+                }).then(okay => {
+                    if (okay) {
+                        window.location.href = "/parking";
+                    } 
+                });
+            } else {
+                swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 1500 });
+            }
         });
     };
 
@@ -32,7 +43,7 @@ function login() {
             nome: values.nome,
             senha: values.senha
         }).then((response) => {
-            swal.fire({icon: 'info', title: response.data, showConfirmButton: false, timer: 1500});
+            swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 1500 });
         });
     };
 
