@@ -19,7 +19,7 @@ function login() {
                     type: "success"
                 }).then(okay => {
                     if (okay) {
-                        window.location.href = "/parking";
+                        window.location.href = "/parking2";
                     } 
                 });
             } else {
@@ -43,7 +43,7 @@ function login() {
             nome: values.nome,
             senha: values.senha
         }).then((response) => {
-            swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 1500 });
+            swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 1500 }).then(okay => {window.location.href = "/login"; });;
         });
     };
 

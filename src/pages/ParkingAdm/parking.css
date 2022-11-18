@@ -1,0 +1,133 @@
+.div-h1 {
+    padding-top: 25px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    text-shadow: 0 0 5px yellow;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: rgba(100, 100, 100, 0.4);
+    border-style: dashed;
+    border-color: yellow;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+#Planta {
+    height: 435px;
+    width: 774px;
+    background-repeat: no-repeat;
+    margin-left: 50px;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: yellow;
+    border-width: 3px;
+}
+
+#Legenda {
+    font-size: 18px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 0 0 5px white;
+}
+
+.div-h1 {
+    background-image: url(../../images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#b1 {
+    border-color: black;
+    border-width: 2px;
+    background-color: lime;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.row {
+    height: 435px;
+    width: 1535px;
+    padding-left: 10px;
+}
+
+.SelectSpot {
+    background-color: gray;
+    color: black;
+    padding: 6px;
+    width: 150px;
+    border: none;
+    font-size: 20px;
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.Edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#b61 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 8px;
+    border-color: transparent;
+}
+
+#b62 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 19px;
+    border-color: transparent;
+}
+
+#b63 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 13px;
+    border-color: transparent;
+}
+
+#b64 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 13px;
+    border-color: transparent;
+}
+
+#b65 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 15px;
+    border-color: transparent;
+}
+
+#b66 {
+    background-color: transparent;
+    margin-top: 300px;
+    margin-left: 16px;
+    border-color: transparent;
+}
+
+#b67 {
+    background-color: transparent;
+    margin-top: 100px;
+    margin-left: 16px;
+    border-color: transparent;
+}
