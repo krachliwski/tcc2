@@ -34,11 +34,11 @@ app.post("/register", (req, res) => {
               if (err) {
                 res.send(err);
               }
-              res.send({ msg: "Cadastrado com sucesso" })
+              res.send("Cadastrado com sucesso")
             });
         })
       } else {
-        res.send({ msg: "Usuário já existente" })
+        res.send("Usuário já existente")
       }
     })
 });
@@ -60,7 +60,7 @@ app.post("/login", (req, res) => {
         }
       });
     } else {
-      res.send({ msg: "Usuário não registrado! Registre nos campos abaixo" });
+      res.send("Usuário não registrado! Registre nos campos abaixo");
     }
   });
 });
