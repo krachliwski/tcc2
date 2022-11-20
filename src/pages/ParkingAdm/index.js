@@ -13,9 +13,9 @@ import swal from 'sweetalert';
 
 export default function Parking() {
     const [success, setSucess] = useState(false);
-    const sucessImage = <img src={EOcup} alt="EOcup" width="20" height="25" />;
-    const defaultImage = <img src={EFree} alt="EFree" width="20" height="25" />;
-    const indispImage = <img src={EIndisp} alt="EIndisp" width="20" height="25" />;
+    const sucessImage = <img src={Ocup} alt="Ocup" width="20" height="25" />;
+    const defaultImage = <img src={Free} alt="Free" width="20" height="25" />;
+    const indispImage = <img src={Indisp} alt="Indisp" width="20" height="25" />;
     return (
         <div class="main">
             <Menu />
@@ -24,7 +24,7 @@ export default function Parking() {
                 <div id="Legenda">
                     <a><img alt="Free" src={Free} width="28" height="40" />  Vaga Livre</a>
                     <a><img alt="Ocup" src={Ocup} width="28" height="40" />  Vaga Ocupada</a>
-                    <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível ou Reservada</a>
+                    <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível</a>
                 </div>
                 <div id="Planta" style={{ backgroundImage: `url(${Planta})` }}>
                     <button id="b61" className="spots">
@@ -56,10 +56,10 @@ export default function Parking() {
                                     swal("Status alterado", {
                                         icon: "success",
                                     });
-                                    if (indispImage) {
-                                        setSucess(false);
-                                    } else {
+                                    if (defaultImage) {
                                         setSucess(true);
+                                    } else {
+                                        setSucess(false);
                                     }
                                 } else {
                                     swal("Ação cancelada!", {

@@ -20,7 +20,7 @@ function login() {
                 }).then(okay => {
                     if (okay) {
                         window.location.href = "/parking2";
-                    } 
+                    }
                 });
             } else {
                 swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 1500 });
@@ -43,7 +43,7 @@ function login() {
             nome: values.nome,
             senha: values.senha
         }).then((response) => {
-            swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 1500 }).then(okay => {window.location.href = "/login"; });;
+            swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 1500 }).then(okay => { window.location.href = "/login"; });;
         });
     };
 
@@ -60,6 +60,7 @@ function login() {
             .oneOf([yup.ref("senha"), null], "As senhas são diferentes")
             .required("A confirmação da senha é obrigatória"),
     });
+    
     return (
         <div className="Back">
             <Menu />
@@ -83,7 +84,7 @@ function login() {
                         </Form>
                     </Formik>
                     <br />
-                    <h3>Registrar</h3>
+                    <h3>Cadsatrar</h3>
                     <Formik initialValues={{}} onSubmit={handleClickRegister} validationSchema={validationRegister}>
                         <Form name="formLogin" method="post" data-parsley-validate="">
                             <div>

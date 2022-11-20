@@ -23,7 +23,7 @@ export default function Parking() {
         <div id="Legenda">
           <a><img alt="Free" src={Free} width="28" height="40" />  Vaga Livre</a>
           <a><img alt="Ocup" src={Ocup} width="28" height="40" />  Vaga Ocupada</a>
-          <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível ou Reservada</a>
+          <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível</a>
         </div>
         <div id="Planta" style={{ backgroundImage: `url(${Planta})` }}>
           <button id="b61" className="spots">
@@ -65,9 +65,6 @@ export default function Parking() {
             id="b66" className="spots">
             {defaultImage}
           </button>
-        </div>
-        <div className="Edit">
-          <Button href="login">Gerenciar Vagas</Button>
         </div>
       </div>
     </div>
