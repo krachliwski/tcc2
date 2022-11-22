@@ -27,21 +27,21 @@ export default function Parking() {
                     <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível</a>
                 </div>
                 <div id="Planta" style={{ backgroundImage: `url(${Planta})` }}>
-                    <button id="b61" className="spots">
+                    <button id="b61a" className="spots">
 
                         {defaultImage}
 
                     </button>
-                    <button id="b62" className="spots">
+                    <button id="b62a" className="spots">
                         {sucessImage}
                     </button>
-                    <button id="b63" className="spots">
+                    <button id="b63a" className="spots">
                         {sucessImage}
                     </button>
-                    <button id="b64" className="spots">
+                    <button id="b64a" className="spots">
                         {indispImage}
                     </button>
-                    <button id="b65" className="spots">
+                    <button id="b65a" className="spots">
                         {defaultImage}
                     </button>
                     <button onClick={() => {
@@ -68,7 +68,7 @@ export default function Parking() {
                                 }
                             });
                     }}
-                        id="b66" className="spots">
+                        id="b66a" className="spots">
                         {success ? indispImage : defaultImage}
                     </button>
                 </div>
