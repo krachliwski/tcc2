@@ -12,9 +12,9 @@ import { Button } from 'react-bootstrap';
 import swal from 'sweetalert';
 
 export default function Parking() {
-  const sucessImage = <img src={EOcup} alt="EOcup" width="20" height="25" />;
-  const defaultImage = <img src={EFree} alt="EFree" width="20" height="25" />;
-  const indispImage = <img src={EIndisp} alt="EIndisp" width="20" height="25" />;
+  const sucessImage = <img src={Ocup} alt="EOcup" width="20" height="25" />;
+  const defaultImage = <img src={Free} alt="EFree" width="20" height="25" />;
+  const indispImage = <img src={Indisp} alt="EIndisp" width="20" height="25" />;
   return (
     <div class="main">
       <Menu />

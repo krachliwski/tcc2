@@ -60,7 +60,7 @@ app.post("/login", (req, res) => {
         }
       });
     } else {
-      res.send("Usuário não registrado! Registre nos campos abaixo");
+      res.send("Usuário não encontrado! Cadastre nos campos abaixo");
     }
   });
 });

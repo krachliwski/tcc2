@@ -23,7 +23,7 @@ function login() {
                     }
                 });
             } else {
-                swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 1500 });
+                swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 2000 });
             }
         });
     };
