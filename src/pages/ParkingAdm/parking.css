@@ -76,58 +76,69 @@ h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+.Stat-box {
+    padding-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.form-erro {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    border-color: black;
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 0 0 2px white;
+}
+
 .Edit {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    margin-right: 37px;
 }
 
-#b61a {
+#A61a {
     background-color: transparent;
     margin-top: 300px;
     margin-left: 8px;
     border-color: transparent;
 }
 
-#b62a {
+#A62a {
     background-color: transparent;
     margin-top: 300px;
     margin-left: 19px;
     border-color: transparent;
 }
 
-#b63a {
+#A63a {
     background-color: transparent;
     margin-top: 300px;
     margin-left: 13px;
     border-color: transparent;
 }
 
-#b64a {
+#A64a {
     background-color: transparent;
     margin-top: 300px;
     margin-left: 13px;
     border-color: transparent;
 }
 
-#b65a {
+#A65a {
     background-color: transparent;
     margin-top: 300px;
     margin-left: 15px;
     border-color: transparent;
 }
 
-#b66a {
+#A66a {
     background-color: transparent;
     margin-top: 300px;
-    margin-left: 16px;
-    border-color: transparent;
-}
-
-#b67a {
-    background-color: transparent;
-    margin-top: 100px;
     margin-left: 16px;
     border-color: transparent;
 }

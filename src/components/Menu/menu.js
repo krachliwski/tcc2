@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container';
 import './menu.css';
 import Logo from '../../images/logo.png';
 import { BsYoutube, BsInstagram } from 'react-icons/bs';
+import swal from 'sweetalert2';
+import * as Yup from "yup";
 
 export default class Menu extends Component {
     render() {
@@ -30,7 +32,34 @@ export default class Menu extends Component {
                                         <Nav.Link className="Letras" href="/">Página Principal</Nav.Link>
                                         <Nav.Link className="Letras" href="/#sobre">Sobre Nós</Nav.Link>
                                         <Nav.Link className="Letras" href="/#details">Detalhes do Projeto</Nav.Link>
-                                        <Nav.Link className="Letras" href="login">Log-In</Nav.Link>
+                                        <Nav.Link className="Letras" //href="login"
+                                        onClick={() => {
+                                            swal.fire({
+                                                title: "Insira o token para acesar a página",
+                                                icon: "warning",
+                                                input: "password",
+                                                inputAttributes: {
+                                                    autocapitalize: 'off'
+                                                  },
+                                                inputValidator: (input) => {
+                                                    if (input == '123') window.location.href = "/login"
+                                                    else return "Incorreto, tente novamente!"
+                                                },
+                                                showCancelButton: true,
+                                                cancelButtonText: 'Cancelar',
+                                                confirmButtonText: 'Confirmar',
+                                            }).then((result) => {
+                                                if (result.isConfirmed) {
+                                                    
+                                                } else {
+                                                    swal.fire("Cancelado", {
+                                                        icon: "error",
+                                                        timer: 1500
+                                                    });
+                                                }
+                                            });
+                                        }}
+                                        >Log-In</Nav.Link>
                                         <div className="DropDown">
                                             <NavDropdown title="Menu" id="basic-nav-dropdown">
                                                 <NavDropdown.Item href="generateQRCode">Gerar QRCode</NavDropdown.Item>

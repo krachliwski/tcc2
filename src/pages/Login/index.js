@@ -34,7 +34,7 @@ function login() {
             .required("O nome é obrigatório"),
         senha: yup
             .string()
-            .min(8, "A senha deve ter pelo menos 8 caracteres")
+            .min(8, "A senha está fora do padrão")
             .required("A senha é obrigatória"),
     });
 

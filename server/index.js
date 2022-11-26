@@ -16,6 +16,32 @@ const db = mysql.createPool({
 app.use(cors());
 app.use(express.json());
 
+/*
+SELECT CASE
+     WHEN status = 'I' THEN 'Indisp'
+     WHEN status = 'D' THEN 'Disp'
+       ELSE 3 END AS status
+FROM vaga_status WHERE bloco = 'A' AND codigo = '66'
+*/
+
+app.post("/status", (req, res) => {
+  const bloco = req.body.bloco;
+  const vaga = req.body.vaga;
+
+  db.query("SELECT status FROM vaga_status WHERE bloco = ? AND codigo = ?", [bloco, vaga],
+    (err, result) => {
+      if (err) {
+        res.send(err);
+      }
+      if (result[0].status == 'D') {
+        db.query("UPDATE vaga_status SET status = 'I' WHERE bloco = ? AND codigo = ? ", [bloco, vaga]);
+        res.send("Vaga Alterada!");
+      } else {
+        db.query("UPDATE vaga_status SET status = 'D' WHERE bloco = ? AND codigo = ? ", [bloco, vaga]);
+        res.send("Vaga Alterada!");
+      }
+    });
+});
 
 app.post("/register", (req, res) => {
   const nome = req.body.nome;

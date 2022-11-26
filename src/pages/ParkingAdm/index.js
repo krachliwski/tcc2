@@ -10,9 +10,51 @@ import EOcup from '../../images/EOccup.png';
 import EIndisp from '../../images/EIndisp.png';
 import { Button } from 'react-bootstrap';
 import swal from 'sweetalert';
+import Axios from 'axios';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as yup from "yup";
 
 export default function Parking() {
+    const handleClickStatus = (values) => {
+        Axios.post("http://localhost:3001/status", {
+            bloco: values.bloco,
+            vaga: values.vaga
+        }).then((response) => {
+            swal({ icon: 'info', title: response.data, mButton: false, timer: 2000, });
+            window.location.href = "/parking2";
+        });
+    };
+
+    const validationStatus = yup.object().shape({
+        bloco: yup
+            .string()
+            .required("Campo Obrigatório"),
+        vaga: yup
+            .string()
+            .required("Campo Obrigatório!"),
+    });
+
     const [success, setSucess] = useState(false);
+
+    /*
+        const Image = (values) => {
+        Axios.post("http://localhost:3001/images", {
+        }).then((response) => {
+            if (response.data == "D") {
+                Free = <img src={Free} alt="Free" width="20" height="25" />;
+                //const defaultImage = <img src={Free} alt="Free" width="20" height="25" />;
+            }
+            if (response.data == "I") {
+                Indisp = <img src={Indisp} alt="Indisp" width="20" height="25" />;
+                //const indispImage = <img src={Indisp} alt="Indisp" width="20" height="25" />;
+            } else {
+                Ocup = <img src={Ocup} alt="Ocup" width="20" height="25" />;
+                //const sucessImage = <img src={Ocup} alt="Ocup" width="20" height="25" />;
+            }
+        });
+    };
+    */
+
     const sucessImage = <img src={Ocup} alt="Ocup" width="20" height="25" />;
     const defaultImage = <img src={Free} alt="Free" width="20" height="25" />;
     const indispImage = <img src={Indisp} alt="Indisp" width="20" height="25" />;
@@ -27,50 +69,46 @@ export default function Parking() {
                     <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível</a>
                 </div>
                 <div id="Planta" style={{ backgroundImage: `url(${Planta})` }}>
-                    <button id="b61a" className="spots">
+                    <button id="A61a" className="spots">
 
                         {defaultImage}
 
                     </button>
-                    <button id="b62a" className="spots">
+                    <button id="A62a" className="spots">
                         {sucessImage}
                     </button>
-                    <button id="b63a" className="spots">
+                    <button id="A63a" className="spots">
                         {sucessImage}
                     </button>
-                    <button id="b64a" className="spots">
+                    <button id="A64a" className="spots">
                         {indispImage}
                     </button>
-                    <button id="b65a" className="spots">
+                    <button id="A65a" className="spots">
                         {defaultImage}
                     </button>
-                    <button onClick={() => {
-                        swal({
-                            title: "Alterar status da vaga?",
-                            icon: "warning",
-                            buttons: true,
-                            dangerMode: true,
-                        })
-                            .then((willDelete) => {
-                                if (willDelete) {
-                                    swal("Status alterado", {
-                                        icon: "success",
-                                    });
-                                    if (defaultImage) {
-                                        setSucess(true);
-                                    } else {
-                                        setSucess(false);
-                                    }
-                                } else {
-                                    swal("Ação cancelada!", {
-                                        icon: "error"
-                                    });
-                                }
-                            });
-                    }}
-                        id="b66a" className="spots">
-                        {success ? indispImage : defaultImage}
+                    <button id="A66a" className="spots">
+                        {defaultImage}
                     </button>
+                </div>
+                <div className="Stat-box">
+                    <h3>Alterar Vaga</h3>
+                    <Formik initialValues={{}} onSubmit={handleClickStatus} validationSchema={validationStatus}>
+                        <Form name="formStatus" method="post" data-parsley-validate="">
+                            <div>
+                                <div>
+                                    <label for="login">Bloco:</label>
+                                    <Field type="text" name="bloco" id="bloco" class="form-control" />
+                                    <ErrorMessage component="span" name="bloco" className="form-erro" />
+                                </div>
+                                <div>
+                                    <label for="senha">Vaga:</label>
+                                    <Field type="number" name="vaga" id="vaga" class="form-control" />
+                                    <ErrorMessage component="span" name="vaga" className="form-erro" />
+                                </div>
+                            </div>
+                            <Button type="submit">Alterar</Button>
+                        </Form>
+                    </Formik>
                 </div>
                 <div className="Edit">
                     <Button onClick={() => {
