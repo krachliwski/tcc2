@@ -33,31 +33,10 @@ export default function Parking() {
             .string()
             .required("Campo Obrigatório!"),
     });
-
-    const [success, setSucess] = useState(false);
-
-    /*
-        const Image = (values) => {
-        Axios.post("http://localhost:3001/images", {
-        }).then((response) => {
-            if (response.data == "D") {
-                Free = <img src={Free} alt="Free" width="20" height="25" />;
-                //const defaultImage = <img src={Free} alt="Free" width="20" height="25" />;
-            }
-            if (response.data == "I") {
-                Indisp = <img src={Indisp} alt="Indisp" width="20" height="25" />;
-                //const indispImage = <img src={Indisp} alt="Indisp" width="20" height="25" />;
-            } else {
-                Ocup = <img src={Ocup} alt="Ocup" width="20" height="25" />;
-                //const sucessImage = <img src={Ocup} alt="Ocup" width="20" height="25" />;
-            }
-        });
-    };
-    */
-
-    const sucessImage = <img src={Ocup} alt="Ocup" width="20" height="25" />;
-    const defaultImage = <img src={Free} alt="Free" width="20" height="25" />;
-    const indispImage = <img src={Indisp} alt="Indisp" width="20" height="25" />;
+    
+    const ocup = <img src={Ocup} alt="Ocup" width="20" height="25" />;
+    const disp = <img src={Free} alt="Free" width="20" height="25" />;
+    const indisp = <img src={Indisp} alt="Indisp" width="20" height="25" />;
     return (
         <div class="main">
             <Menu />
@@ -70,24 +49,22 @@ export default function Parking() {
                 </div>
                 <div id="Planta" style={{ backgroundImage: `url(${Planta})` }}>
                     <button id="A61a" className="spots">
-
-                        {defaultImage}
-
+                        {disp}
                     </button>
                     <button id="A62a" className="spots">
-                        {sucessImage}
+                        {ocup}
                     </button>
                     <button id="A63a" className="spots">
-                        {sucessImage}
+                        {ocup}
                     </button>
                     <button id="A64a" className="spots">
-                        {indispImage}
+                        {indisp}
                     </button>
                     <button id="A65a" className="spots">
-                        {defaultImage}
+                        {disp}
                     </button>
                     <button id="A66a" className="spots">
-                        {defaultImage}
+                        {disp}
                     </button>
                 </div>
                 <div className="Stat-box">
@@ -102,7 +79,7 @@ export default function Parking() {
                                 </div>
                                 <div>
                                     <label for="senha">Vaga:</label>
-                                    <Field type="number" name="vaga" id="vaga" class="form-control" />
+                                    <Field type="number" name="vaga" id="vaga" class="form-control" min="61" max="66" />
                                     <ErrorMessage component="span" name="vaga" className="form-erro" />
                                 </div>
                             </div>

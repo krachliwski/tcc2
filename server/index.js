@@ -16,14 +16,6 @@ const db = mysql.createPool({
 app.use(cors());
 app.use(express.json());
 
-/*
-SELECT CASE
-     WHEN status = 'I' THEN 'Indisp'
-     WHEN status = 'D' THEN 'Disp'
-       ELSE 3 END AS status
-FROM vaga_status WHERE bloco = 'A' AND codigo = '66'
-*/
-
 app.post("/status", (req, res) => {
   const bloco = req.body.bloco;
   const vaga = req.body.vaga;

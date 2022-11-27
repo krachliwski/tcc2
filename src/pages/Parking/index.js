@@ -27,9 +27,7 @@ export default function Parking() {
         </div>
         <div id="Planta" style={{ backgroundImage: `url(${Planta})` }}>
           <button id="b61" className="spots">
-
             {defaultImage}
-
           </button>
           <button id="b62" className="spots">
             {sucessImage}
@@ -43,26 +41,7 @@ export default function Parking() {
           <button id="b65" className="spots">
             {defaultImage}
           </button>
-          <button onClick={() => {
-            swal({
-              title: "Quer mesmo indisponibilizar esta vaga?",
-              icon: "warning",
-              buttons: true,
-              dangerMode: true,
-            })
-              .then((willDelete) => {
-                if (willDelete) {
-                  swal("Vaga indisponibilizar!", {
-                    icon: "success",
-                  });
-                } else {
-                  swal("Ação cancelada!", {
-                    icon: "error"
-                  });
-                }
-              });
-          }}
-            id="b66" className="spots">
+          <button id="b66" className="spots">
             {defaultImage}
           </button>
         </div>
