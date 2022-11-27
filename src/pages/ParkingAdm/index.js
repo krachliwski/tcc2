@@ -33,10 +33,11 @@ export default function Parking() {
             .string()
             .required("Campo Obrigatório!"),
     });
-    
+
     const ocup = <img src={Ocup} alt="Ocup" width="20" height="25" />;
     const disp = <img src={Free} alt="Free" width="20" height="25" />;
     const indisp = <img src={Indisp} alt="Indisp" width="20" height="25" />;
+
     return (
         <div class="main">
             <Menu />
