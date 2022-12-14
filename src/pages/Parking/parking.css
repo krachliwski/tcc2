@@ -12,8 +12,6 @@ h1 {
     padding-top: 25px;
     padding-bottom: 25px;
     background-color: rgba(100, 100, 100, 0.4);
-    border-style: dashed;
-    border-color: yellow;
     border-width: 2px;
     border-radius: 10px;
 }

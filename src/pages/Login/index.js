@@ -84,7 +84,7 @@ function login() {
                         </Form>
                     </Formik>
                     <br />
-                    <h3>Cadsatrar</h3>
+                    <h3>Cadastrar</h3>
                     <Formik initialValues={{}} onSubmit={handleClickRegister} validationSchema={validationRegister}>
                         <Form name="formLogin" method="post" data-parsley-validate="">
                             <div>
@@ -93,7 +93,7 @@ function login() {
                                 <ErrorMessage component="span" name="nome" className="form-erro" />
                             </div>
                             <div>
-                                <label for="senha">Insira uma Senha</label>
+                                <label for="senha">Senha</label>
                                 <Field type="password" name="senha" id="senha" class="form-control" />
                                 <ErrorMessage component="span" name="senha" className="form-erro" />
                             </div>

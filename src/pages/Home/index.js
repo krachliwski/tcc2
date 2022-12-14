@@ -1,53 +1,35 @@
 import React from 'react';
 import './home.css';
 import Menu from '../../components/Menu/menu';
-import {useNavigate} from 'react-router-dom';
 
 export default function Home() {
-  const navigate = useNavigate();
-  const ToParking = () => {
-    navigate('/parking');
-  };
   return (
     <div className="container-home">
 
       <Menu />
       <div class="back-text-div">
         <div class="text-div">
-          <br />
-          <br />
-          <h1 id='sobre'>Sobre Nós</h1>
-          <a> Somos um grupo de desenvolvedores que procura melhorar a vida das pessoas, assim como todos no geral.<br />
-            Porém trabalhamos na otimização de uma área específica, a qual é a de gerenciamento de estacionamentos.
-          </a>
-          <br />
-          <a> Nosso diferencial é explorar ainda mais as tecnologias atuais, automatizando, otimizando e facilitando
-            todo o processo o máximo possível.<br />
-            Dessa forma, conseguimos modificar grande parte de um processo que até hoje ainda existe, e é muito utilizado
-            (apesar de não ser muito viável e prático em alguns casos).<br />
-          </a>
-          <br />
-          <a> Agora, imagine uma sala de cinema atualmente. Na grande maioria dos casos, para que podemos comprar os ingressos, somos apresentados a uma página<br />
-            contendo um mapa da sala, onde é mostrado quais poltronas estão disponíveis e quais estão ocupadas.<br />
-            Convenhamos que isso facilita e muito nesse momento de lazer, então por quê não utilizar a mesma ideia para estacionamentos?
-          </a>
-          <br />
-          <br />
           <h1 id='details'>Detalhes do Projeto</h1>
-          <a> Já que chegou aqui, deve estar pensando, "Mas como seria feito todo o controle de saída e entrada dentro do local?". Pois bem, vamos lá...<br />
-            O sistema funciona por meio da comunicação com sensores, e também com QRCodes.
+          <a>
+            Com o atual cenário da tecnologia, tudo se tornou mais rápido e prático,
+            sendo tudo em tempo real e sem pausas.
             <br />
+            Com essa ideia em mente,
+            o presente trabalho busca resolver um dos problemas mais comuns
+            em grandes estacionamentos de lojas, mercados ou shoppings.
+            A ideia consiste em permitir que o usuário consiga acessar remotamente a página
+            web do estabelecimento e consultar a disponibilidade de vagas no local,
+            além da consulta na página web, também será possível que o cliente consulte
+            as vagas disponíveis ao chegar no local.
             <br />
-            <a> Cada vaga contém um sensor de proximidade e um QRCode, dessa forma, podemos detectar a presença de veículos, fazendo com que o sensor<br />
-              envie um sinal para o sistema e marque a vaga como ocupada.
-              <br />
-              Já os QRCodes são utilizados para a realização do pagamento por exemplo, ou também para o check-in, tendo basicamente a mesma função do sensor.<br />
-            </a> Também há a possibilidade de fazer a reserva de vagas através deste site, onde é realizada a <button className="btn-parking" onClick={ToParking}>consulta de vagas.</button>
-            <br />
+            Desta maneira, pretendemos melhorar a experiência
+            do usuário com os serviços oferecidos dentro do estacionamento do estabelecimento,
+            e como resultado implícito, proporcionar um nível de satisfação elevado,
+            gerando um nível de consumo maior no estabelecimento.
           </a>
 
           <br />
-          </div>
+        </div>
       </div>
     </div>
   )
