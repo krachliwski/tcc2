@@ -140,7 +140,7 @@ app.post("/login", (req, res) => {
         if (result) {
           res.send("Usuário Logado!");
         } else {
-          res.send("Senha Incorreta!");
+          res.send("Nome ou Senha Incorretos!");
         }
       });
     } else {
