@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './parking.css';
+import './parkingAdm.css';
 import Menu from '../../components/Menu/menu';
 import Planta from '../../images/Planta.png';
 import Free from '../../images/Free.png';
@@ -184,7 +184,7 @@ export default function Parking() {
         <div class="main">
             <Menu />
             <div class="div-h1">
-                <h1>Parking Administration</h1>
+                <h1>Estacionamento - Administração</h1>
                 <div id="Legenda">
                     <a><img alt="Free" src={Free} width="28" height="40" />  Vaga Livre</a>
                     <a><img alt="Ocup" src={Ocup} width="28" height="40" />  Vaga Ocupada</a>
