@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import './menu.css';
 import Logo from '../../images/logo.png';
@@ -27,8 +27,7 @@ export default class Menu extends Component {
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 <Navbar.Collapse id="basic-navbar-nav">
                                     <Nav>
-                                        <Nav.Link className="Letras" href="/#details">Detalhes do Projeto</Nav.Link>
-                                        <Nav.Link className="Letras" //href="login"
+                                        <Nav.Link className="Letras"
                                             onClick={() => {
                                                 swal.fire({
                                                     title: "Insira os dados do Supervisor",

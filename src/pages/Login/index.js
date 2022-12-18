@@ -60,7 +60,7 @@ function login() {
             .oneOf([yup.ref("senha"), null], "As senhas são diferentes")
             .required("A confirmação da senha é obrigatória"),
     });
-    
+
     return (
         <div className="Back">
             <Menu />
@@ -69,17 +69,17 @@ function login() {
                     <Formik initialValues={{}} onSubmit={handleClickLogin} validationSchema={validationLogin}>
                         <Form name="formLogin" method="post" data-parsley-validate="">
                             <div>
-                                <label for="login">Login:</label>
+                                <label for="login">Login</label>
                                 <Field type="text" name="nome" id="login" class="form-control" />
                                 <ErrorMessage component="span" name="nome" className="form-erro" />
                             </div>
                             <div>
-                                <label for="senha">Senha:</label>
+                                <label for="senha">Senha</label>
                                 <Field type="password" name="senha" id="senha" class="form-control" />
                                 <ErrorMessage component="span" name="senha" className="form-erro" />
                             </div>
                             <div className="buttons">
-                                <Button type="submit">Efetuar Login</Button>
+                                <Button type="submit">Entrar</Button>
                             </div>
                         </Form>
                     </Formik>
@@ -88,7 +88,7 @@ function login() {
                     <Formik initialValues={{}} onSubmit={handleClickRegister} validationSchema={validationRegister}>
                         <Form name="formLogin" method="post" data-parsley-validate="">
                             <div>
-                                <label for="login">Nome:</label>
+                                <label for="login">Nome</label>
                                 <Field type="text" name="nome" id="login" class="form-control" />
                                 <ErrorMessage component="span" name="nome" className="form-erro" />
                             </div>
@@ -102,7 +102,9 @@ function login() {
                                 <Field type="password" name="confirmation" id="senha" class="form-control" />
                                 <ErrorMessage component="span" name="confirmation" className="form-erro" />
                             </div>
-                            <Button type="submit">Concluir</Button>
+                            <div className="buttons">
+                                <Button type="submit">Concluir</Button>
+                            </div>
                         </Form>
                     </Formik>
                 </div>

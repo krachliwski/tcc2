@@ -7,7 +7,6 @@
 h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
-    text-shadow: 0 0 5px yellow;
     text-align: center;
     padding-top: 25px;
     padding-bottom: 25px;
@@ -17,7 +16,7 @@ h1 {
 }
 
 #Planta {
-    background-image: url(../../images/Planta.png);
+    /*background-image: url(../../images/Planta.png);*/
     height: 435px;
     width: 774px;
     background-repeat: no-repeat;

@@ -1,13 +1,6 @@
 .Navbar {
-  background-color: #333333;
+  background-color: #168aad;
 }
-
-.back-Nav {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(2px);
-}
-
-/*background-color: #495057;*/
 
 .Nav {
   display: flex;
@@ -17,22 +10,21 @@
 }
 
 .Nav .Letras {
-  font-size: 25px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
+  font-family: fantasy, monospace;
   color: black;
-  text-shadow: 0 0 5px yellow;
-  border-radius: 100px;
-  margin-right: 90px;
+  margin-inline-end: 120px;
 }
 
 .BrandName, .BrandName:hover {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: yellow;
   text-decoration: none;
-  font-size: 23px;
+  font-size: 25px;
   text-shadow: 0 0 15px black;
 }
 
+/*
 .Nav .Letras:hover {
   color: yellow;
   font-weight: normal;
@@ -63,9 +55,6 @@
   transform-origin: bottom left;
 }
 
-.Logo {
-  padding-left: 0px;
-}
 
 .Logo:after {
   content: '';
@@ -112,6 +101,7 @@
   transform-origin: bottom left;
 }
 
+
 #basic-nav-dropdown {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: yellow;
@@ -128,3 +118,5 @@
   display: block;
   margin-top: 0;
 }
+
+*/

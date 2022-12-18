@@ -5,7 +5,6 @@ import Menu from '../../components/Menu/menu';
 export default function Home() {
   return (
     <div className="container-home">
-
       <Menu />
       <div class="back-text-div">
         <div class="text-div">
@@ -27,7 +26,6 @@ export default function Home() {
             e como resultado implícito, proporcionar um nível de satisfação elevado,
             gerando um nível de consumo maior no estabelecimento.
           </a>
-
           <br />
         </div>
       </div>
