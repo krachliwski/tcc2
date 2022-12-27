@@ -13,6 +13,21 @@ h1 {
     background-color: rgba(100, 100, 100, 0.4);
     border-width: 2px;
     border-radius: 10px;
+    text-shadow: 0 0 5px #168AAD;
+}
+
+h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    text-align: center;
+    text-shadow: 0 0 5px #168AAD;
+}
+
+label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    text-align: center;
+    text-shadow: 0 0 5px #168AAD;
 }
 
 #Planta {
@@ -22,8 +37,33 @@ h1 {
     margin-left: 50px;
     border-radius: 50px;
     border-style: solid;
-    border-color: yellow;
+    border-color: #168AAD;
     border-width: 3px;
+}
+
+#NomeBloco {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    text-align: center;
+    text-shadow: 0 0 5px #168AAD;
+    padding-bottom: 25px;
+}
+
+.parent {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.parent2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
 #Legenda {
@@ -36,7 +76,14 @@ h1 {
     justify-content: space-between;
     text-align: center;
     margin-bottom: 25px;
-    text-shadow: 0 0 5px white;
+    text-shadow: 0 0 5px #168AAD;
+}
+
+button {
+    font-size: 18px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-shadow: 0 0 5px #168AAD;
 }
 
 .div-h1 {
@@ -81,6 +128,14 @@ h1 {
     width: 20%;
 }
 
+.sair {
+    padding-top: 10px;
+    display: block;
+    margin-left: 410px;
+    margin-right: auto;
+    width: 20%;
+}
+
 .form-erro {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
@@ -100,48 +155,36 @@ h1 {
 
 #A61a {
     background-color: transparent;
-    margin-top: 300px;
-    margin-left: 8px;
     border-color: transparent;
     cursor: inherit;
 }
 
 #A62a {
     background-color: transparent;
-    margin-top: 300px;
-    margin-left: 19px;
     border-color: transparent;
     cursor: inherit;
 }
 
 #A63a {
     background-color: transparent;
-    margin-top: 300px;
-    margin-left: 13px;
     border-color: transparent;
     cursor: inherit;
 }
 
 #A64a {
     background-color: transparent;
-    margin-top: 300px;
-    margin-left: 13px;
     border-color: transparent;
     cursor: inherit;
 }
 
 #A65a {
     background-color: transparent;
-    margin-top: 300px;
-    margin-left: 15px;
     border-color: transparent;
     cursor: inherit;
 }
 
 #A66a {
     background-color: transparent;
-    margin-top: 300px;
-    margin-left: 16px;
     border-color: transparent;
     cursor: inherit;
 }

@@ -161,60 +161,77 @@ export default function Parking() {
           <a><img alt="Ocup" src={Ocup} width="28" height="40" />  Vaga Ocupada</a>
           <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível</a>
         </div>
+        <div id="NomeBloco">
+          <a>Bloco A</a>
+        </div>
         <>
           {refreshImg()}
         </>
-        <div id="Planta">
-          <button id="A61a" className="spots">
-            {dis4 && (
-              disp
-            )}
-            {indis4 && (
-              indisp
-            )}
-            {ocupp4 && (
-              ocup
-            )}
-          </button>
-          <button id="A62a" className="spots">
-            {ocup}
-          </button>
-          <button id="A63a" className="spots">
-            {ocup}
-          </button>
-          <button id="A64a" className="spots">
-            {dis3 && (
-              disp
-            )}
-            {indis3 && (
-              indisp
-            )}
-            {ocupp3 && (
-              ocup
-            )}
-          </button>
-          <button id="A65a" className="spots">
-            {dis2 && (
-              disp
-            )}
-            {indis2 && (
-              indisp
-            )}
-            {ocupp2 && (
-              ocup
-            )}
-          </button>
-          <button id="A66a" className="spots">
-            {dis && (
-              disp
-            )}
-            {indis && (
-              indisp
-            )}
-            {ocupp && (
-              ocup
-            )}
-          </button>
+        <div id="Planta" style={{ backgroundColor: `#161A25` }}>
+          <div className='parent'>
+            <button id="A61a" className="spots">
+              {dis4 && (
+                disp
+              )}
+              {indis4 && (
+                indisp
+              )}
+              {ocupp4 && (
+                ocup
+              )}
+              <br />
+              61
+            </button>
+            <button id="A62a" className="spots">
+              {ocup}
+              <br />
+              62
+            </button>
+            <button id="A63a" className="spots">
+              {ocup}
+              <br />
+              63
+            </button>
+            <button id="A64a" className="spots">
+              {dis3 && (
+                disp
+              )}
+              {indis3 && (
+                indisp
+              )}
+              {ocupp3 && (
+                ocup
+              )}
+              <br />
+              64
+            </button>
+            <button id="A65a" className="spots">
+              {dis2 && (
+                disp
+              )}
+              {indis2 && (
+                indisp
+              )}
+              {ocupp2 && (
+                ocup
+              )}
+              <br />
+              65
+            </button>
+            <button id="A66a" className="spots">
+              {dis && (
+                disp
+              )}
+              {indis && (
+                indisp
+              )}
+              {ocupp && (
+                ocup
+              )}
+              <br />
+              66
+            </button>
+          </div>
         </div>
       </div>
     </div>

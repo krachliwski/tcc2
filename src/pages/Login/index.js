@@ -19,7 +19,7 @@ function login() {
                     type: "success"
                 }).then(okay => {
                     if (okay) {
-                        window.location.href = "/parking2";
+                        window.location.href = "/ParkingAdm";
                     }
                 });
             } else {
