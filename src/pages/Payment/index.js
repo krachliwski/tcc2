@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './payment.css';
 import PIX from "react-qrcode-pix";
 import geraExtrato from '../../components/Functions/extrato';
+import calculaValor from '../../components/Functions/functions';
 import Axios from 'axios';
 //import { response } from 'express';
 
@@ -21,8 +22,12 @@ export default function PaymentArea() {
         }).then((response) => {
             console.log(response.data)
         });
-        {handleGenerate()}
+        { handleGenerate() }
     };
+
+    <>
+        {calculaValor()}
+    </>
 
     return (
         <>
@@ -37,7 +42,7 @@ export default function PaymentArea() {
                             <div className='payment-title'>
                                 <span>Ao clicar no botão abaixo será gerado o QRCode para pagamento por Pix</span>
                                 <br />
-                                <button class="btn-parking" onClick={calculaTempo}>GERAR QRCODE</button>
+                                <button class="btn" onClick={calculaTempo}>GERAR QRCODE</button>
                             </div>
                         )}
 
@@ -57,7 +62,7 @@ export default function PaymentArea() {
                                         padding={30}
                                     />
                                 </div>
-                                <button button class='btn-parking' onClick={geraExtrato}>GERAR PDF</button>
+                                <button button class='btn' onClick={geraExtrato}>GERAR PDF</button>
                             </div>
                         )}
                     </div>
