@@ -44,11 +44,14 @@ app.post("/vaga", (req, res) => {
 
   db.query("SELECT * FROM vaga_status WHERE bloco = ? AND codigo = ?", [bloco, vaga],
     (err, result) => {
-      if (result) {
-        res.send("Vaga Já Existente!")
-      } else {
-        db.query("INSERT INTO vaga_status (bloco, codigo, status) VALUES ('?', '?', 'D'", [bloco, vaga]);
+      if (err) {
+        res.send(err);
+      } 
+      if (result.length == 0) {
+        db.query("INSERT INTO vaga_status (bloco, codigo, status) VALUES (?, ?, 'D')", [bloco, vaga]);
         res.send("Vaga Cadastrada!");
+      } else {
+        res.send("Vaga Já Existente!");
       }
     });
 });
