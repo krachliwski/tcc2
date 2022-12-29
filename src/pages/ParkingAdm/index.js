@@ -42,6 +42,21 @@ export default function Parking() {
         });
     };
 
+    const handleClickExcluiVaga = (values) => {
+        Axios.post("http://localhost:3001/excluivaga", {
+            bloco: values.bloco,
+            vaga: values.vaga
+        }).then((response) => {
+            swal({
+                icon: 'info',
+                title: response.data,
+                mButton: false,
+            })
+            window.location.href = "/parkingAdm";
+            { refreshImg() };
+        });
+    };
+
     const validationStatus = yup.object().shape({
         bloco: yup
             .string()
@@ -213,7 +228,7 @@ export default function Parking() {
                 </>
                 <div id="Planta" /*style={{backgroundImage: `url(${Planta})` }}*/ style={{ backgroundColor: `#161A25` }}>
                     <div className='parent'>
-                        <button id="A61a" className="spots">
+                        <button id="Indicador" className="spots">
                             {dis4 && (
                                 disp
                             )}
@@ -226,17 +241,17 @@ export default function Parking() {
                             <br />
                             61
                         </button>
-                        <button id="A62a" className="spots">
+                        <button id="Indicador" className="spots">
                             {ocup}
                             <br />
                             62
                         </button>
-                        <button id="A63a" className="spots">
+                        <button id="Indicador" className="spots">
                             {ocup}
                             <br />
                             63
                         </button>
-                        <button id="A64a" className="spots">
+                        <button id="Indicador" className="spots">
                             {dis3 && (
                                 disp
                             )}
@@ -249,7 +264,7 @@ export default function Parking() {
                             <br />
                             64
                         </button>
-                        <button id="A65a" className="spots">
+                        <button id="Indicador" className="spots">
                             {dis2 && (
                                 disp
                             )}
@@ -262,7 +277,7 @@ export default function Parking() {
                             <br />
                             65
                         </button>
-                        <button id="A66a" className="spots">
+                        <button id="Indicador" className="spots">
                             {dis && (
                                 disp
                             )}
@@ -290,7 +305,7 @@ export default function Parking() {
                                     </div>
                                     <div>
                                         <label for="senha">Vaga:</label>
-                                        <Field type="number" name="vaga" id="vaga" class="form-control" min="01" max="50" />
+                                        <Field type="number" name="vaga" id="vaga" class="form-control" min="01" max="70" />
                                         <ErrorMessage component="span" name="vaga" className="form-erro" />
                                     </div>
                                 </div>
@@ -300,7 +315,7 @@ export default function Parking() {
                         </Formik>
                     </div>
                     <div className="Stat-box">
-                        <h3>Cadastrar Vaga</h3>
+                        <h3>Cadastro de Vaga</h3>
                         <Formik initialValues={{}} onSubmit={handleClickVaga} validationSchema={validationStatus}>
                             <Form name="formStatus" method="post" data-parsley-validate="">
                                 <div>
@@ -317,6 +332,27 @@ export default function Parking() {
                                 </div>
                                 <br />
                                 <Button type="submit">Cadastrar</Button>
+                            </Form>
+                        </Formik>
+                    </div>
+                    <div className="Stat-box">
+                        <h3>Exclusão de Vaga</h3>
+                        <Formik initialValues={{}} onSubmit={handleClickExcluiVaga} validationSchema={validationStatus}>
+                            <Form name="formStatus" method="post" data-parsley-validate="">
+                                <div>
+                                    <div>
+                                        <label for="login">Bloco:</label>
+                                        <Field type="text" name="bloco" id="bloco" class="form-control" />
+                                        <ErrorMessage component="span" name="bloco" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="senha">Vaga:</label>
+                                        <Field type="number" name="vaga" id="vaga" class="form-control" min="01" max="50" />
+                                        <ErrorMessage component="span" name="vaga" className="form-erro" />
+                                    </div>
+                                </div>
+                                <br />
+                                <Button type="submit">Excluir</Button>
                             </Form>
                         </Formik>
                     </div>

@@ -56,6 +56,24 @@ app.post("/vaga", (req, res) => {
     });
 });
 
+app.post("/excluivaga", (req, res) => {
+  const bloco = req.body.bloco;
+  const vaga = req.body.vaga;
+
+  db.query("SELECT * FROM vaga_status WHERE bloco = ? AND codigo = ?", [bloco, vaga],
+    (err, result) => {
+      if (err) {
+        res.send(err);
+      } 
+      if (result.length == 1) {
+        db.query("DELETE FROM vaga_status WHERE bloco = ? AND codigo = ?", [bloco, vaga]);
+        res.send("Vaga Excluída!");
+      } else {
+        res.send("Vaga Inexistente!");
+      }
+    });
+});
+
 app.post("/mapa", (req, res) => {
   const stat = req.body.stat;
 

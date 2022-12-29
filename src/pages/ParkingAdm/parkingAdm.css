@@ -33,8 +33,6 @@ label {
 #Planta {
     height: 435px;
     width: 774px;
-    background-repeat: no-repeat;
-    margin-left: 50px;
     border-radius: 50px;
     border-style: solid;
     border-color: #168AAD;
@@ -60,7 +58,7 @@ label {
 
 .parent2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -122,16 +120,18 @@ button {
 
 .Stat-box {
     padding-top: 10px;
-    display: block;
+    display: grid;
     margin-left: auto;
     margin-right: auto;
-    width: 20%;
+    text-align: center;
+    align-items: center;
+    width: 40%;
 }
 
 .sair {
     padding-top: 10px;
     display: block;
-    margin-left: 410px;
+    margin-left: 382px;
     margin-right: auto;
     width: 20%;
 }
@@ -153,37 +153,7 @@ button {
     margin-right: 37px;
 }
 
-#A61a {
-    background-color: transparent;
-    border-color: transparent;
-    cursor: inherit;
-}
-
-#A62a {
-    background-color: transparent;
-    border-color: transparent;
-    cursor: inherit;
-}
-
-#A63a {
-    background-color: transparent;
-    border-color: transparent;
-    cursor: inherit;
-}
-
-#A64a {
-    background-color: transparent;
-    border-color: transparent;
-    cursor: inherit;
-}
-
-#A65a {
-    background-color: transparent;
-    border-color: transparent;
-    cursor: inherit;
-}
-
-#A66a {
+#Indicador {
     background-color: transparent;
     border-color: transparent;
     cursor: inherit;
