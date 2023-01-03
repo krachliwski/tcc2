@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './payment.css';
 import PIX from "react-qrcode-pix";
 import geraExtrato from '../../components/Functions/extrato';
-import calculaValor from '../../components/Functions/functions';
+//import calculaValor from '../../components/Functions/functions';
 import Axios from 'axios';
 //import { response } from 'express';
 
@@ -25,9 +25,7 @@ export default function PaymentArea() {
         { handleGenerate() }
     };
 
-    <>
-        {calculaValor()}
-    </>
+    //<> {calculaValor()}  </>
 
     return (
         <>

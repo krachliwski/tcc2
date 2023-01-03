@@ -4,6 +4,7 @@ function calculaValor() {
 
 }
 
+/*
 const calculaTempo = () => {
     Axios.post("http://localhost:3001/calculaTempo", {
     }).then((response) => {
@@ -11,3 +12,4 @@ const calculaTempo = () => {
     });
     {handleGenerate()}
 };
+*/
