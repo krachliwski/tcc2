@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './parkingAdm.css';
 import Menu from '../../components/Menu/menu';
 import Planta from '../../images/Planta.png';
@@ -10,6 +10,7 @@ import swal from 'sweetalert';
 import Axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
+import Card from "../../components/Cards/card";
 
 export default function Parking() {
     const handleClickStatus = (values) => {
@@ -56,6 +57,14 @@ export default function Parking() {
             { refreshImg() };
         });
     };
+    console.log(listVagas);
+    const [listVagas, setListVagas] = useState();
+
+    useEffect(() => {
+        Axios.get("http://localhost:3001/getCards").then((response) => {
+            setListVagas(response.data);
+        })
+    }, [])
 
     const validationStatus = yup.object().shape({
         bloco: yup
@@ -70,37 +79,7 @@ export default function Parking() {
         Axios.post("http://localhost:3001/mapa", {
             stat: 'Z',
         }).then((response) => {
-            if (response.data[5].status == 'O') {
-                { Ocupado() }
-            } else if (response.data[5].status == 'I') {
-                { Indisponivel() }
-            } else {
-                { Disponivel() }
-            }
-            //////////////////////////////////////////////////////////////
-            if (response.data[4].status == 'O') {
-                { Ocupado2() }
-            } else if (response.data[4].status == 'I') {
-                { Indisponivel2() }
-            } else {
-                { Disponivel2() }
-            }
-            //////////////////////////////////////////////////////////////
-            if (response.data[3].status == 'O') {
-                { Ocupado3() }
-            } else if (response.data[3].status == 'I') {
-                { Indisponivel3() }
-            } else {
-                { Disponivel3() }
-            }
-            //////////////////////////////////////////////////////////////
-            if (response.data[0].status == 'O') {
-                { Ocupado4() }
-            } else if (response.data[0].status == 'I') {
-                { Indisponivel4() }
-            } else {
-                { Disponivel4() }
-            }
+            
         });
     };
 
@@ -228,68 +207,16 @@ export default function Parking() {
                 </>
                 <div id="Planta" /*style={{backgroundImage: `url(${Planta})` }}*/ style={{ backgroundColor: `#161A25` }}>
                     <div className='parent'>
-                        <button id="Indicador" className="spots">
-                            {dis4 && (
-                                disp
-                            )}
-                            {indis4 && (
-                                indisp
-                            )}
-                            {ocupp4 && (
-                                ocup
-                            )}
-                            <br />
-                            61
-                        </button>
-                        <button id="Indicador" className="spots">
-                            {ocup}
-                            <br />
-                            62
-                        </button>
-                        <button id="Indicador" className="spots">
-                            {ocup}
-                            <br />
-                            63
-                        </button>
-                        <button id="Indicador" className="spots">
-                            {dis3 && (
-                                disp
-                            )}
-                            {indis3 && (
-                                indisp
-                            )}
-                            {ocupp3 && (
-                                ocup
-                            )}
-                            <br />
-                            64
-                        </button>
-                        <button id="Indicador" className="spots">
-                            {dis2 && (
-                                disp
-                            )}
-                            {indis2 && (
-                                indisp
-                            )}
-                            {ocupp2 && (
-                                ocup
-                            )}
-                            <br />
-                            65
-                        </button>
-                        <button id="Indicador" className="spots">
-                            {dis && (
-                                disp
-                            )}
-                            {indis && (
-                                indisp
-                            )}
-                            {ocupp && (
-                                ocup
-                            )}
-                            <br />
-                            66
-                        </button>
+                        {typeof listVagas !== "undefined" && listVagas.map((value) => {
+                            return (
+                                <Card
+                                    key={value.codigo}
+                                    listCard={listVagas}
+                                    setListVagas={setListVagas}
+                                    codigo={value.codigo}
+                                    status={value.status}
+                                ></Card>);
+                        })}
                     </div>
                 </div>
                 <div className='parent2'>
@@ -305,7 +232,7 @@ export default function Parking() {
                                     </div>
                                     <div>
                                         <label for="senha">Vaga:</label>
-                                        <Field type="number" name="vaga" id="vaga" class="form-control" min="01" max="70" />
+                                        <Field type="number" name="vaga" id="vaga" class="form-control" min="01" max="50" />
                                         <ErrorMessage component="span" name="vaga" className="form-erro" />
                                     </div>
                                 </div>
@@ -347,7 +274,7 @@ export default function Parking() {
                                     </div>
                                     <div>
                                         <label for="senha">Vaga:</label>
-                                        <Field type="number" name="vaga" id="vaga" class="form-control" min="01" max="50" />
+                                        <Field type="number" name="vaga" id="vaga" class="form-control" min="01" max="70" />
                                         <ErrorMessage component="span" name="vaga" className="form-erro" />
                                     </div>
                                 </div>

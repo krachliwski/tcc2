@@ -1,0 +1,12 @@
+.card--container {
+    height: 70px;
+}
+
+.card--codigo {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 5px #168aad;
+}

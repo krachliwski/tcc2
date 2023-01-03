@@ -26,6 +26,9 @@ app.post("/status", (req, res) => {
       if (err) {
         res.send(err);
       }
+      if (result.lenght != 1) {
+        res.send("Vaga Inexistente!");
+      }
       if (result[0].status == 'D') {
         db.query("UPDATE vaga_status SET status = 'I' WHERE bloco = ? AND codigo = ? ", [bloco, vaga]);
         res.send("Vaga Alterada!");
@@ -74,6 +77,15 @@ app.post("/excluivaga", (req, res) => {
     });
 });
 
+app.get("/getCards", (req, res) => {
+  let SQL = "SELECT status, codigo FROM vaga_status"
+
+  db.query(SQL, (err, result) => {
+    if(err) console.log(err);
+    else res.send(result);
+  })
+})
+/*
 app.post("/mapa", (req, res) => {
   const stat = req.body.stat;
 
@@ -84,7 +96,7 @@ app.post("/mapa", (req, res) => {
       }
     });
 });
-
+*/
 app.post("/iniciaTempo", (req, res) => {
   const stat = req.body.stat;
   db.query("INSERT INTO vagas (bloco, codigo, data_chegada, hora_chegada) VALUES ('A', '66', TIME(current_date()), TIME(current_timestamp()))",
