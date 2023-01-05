@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
+import About from './pages/About';
 import Parking from './pages/Parking';
 import ParkingAdm from './pages/ParkingAdm';
 import Error from './pages/Error';
@@ -15,7 +15,7 @@ function RoutesApp() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/aboutUs" element={<AboutUs />} />
+                <Route path="/about" element={<About />} />
                 <Route path="/parking" element={<Parking />} />
                 <Route path="/parkingAdm" element={<ParkingAdm />} />
                 <Route path="/login" element={<Login />} />

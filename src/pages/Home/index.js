@@ -1,6 +1,36 @@
 import React from 'react';
-import './home.css';
+//import './home.css';
 import Menu from '../../components/Menu/menu';
+import Footer from '../Footer/index.js';
+import About from '../About/index.js';
+
+export default function Home() {
+  return (
+    <div className="container-home">
+      <Menu />
+      <About />
+      <Footer />
+    </div>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 export default function Home() {
   return (
@@ -29,6 +59,9 @@ export default function Home() {
           <br />
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
+
+*/
