@@ -3,12 +3,14 @@ import React from 'react';
 import Menu from '../../components/Menu/menu';
 import Footer from '../Footer/index.js';
 import About from '../About/index.js';
+import Goals from '../Goals/index.js';
 
 export default function Home() {
   return (
     <div className="container-home">
       <Menu />
       <About />
+      <Goals />
       <Footer />
     </div>
   )

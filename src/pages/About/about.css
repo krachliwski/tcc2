@@ -29,28 +29,18 @@
 }
 
 .about .content p:first-child {
-    font-style: italic;
-    font-size: .9rem;
-}
-
-.about .content p:nth-child(2) {
-    font-size: 1.9rem;
-}
-
-.about .content p:nth-child(3) {
     font-size: 5rem;
     font-weight: 700;
 }
 
-
-.about .content p:nth-child(4) {
+.about .content p:nth-child(2) {
     font-size: 2.2rem;
     font-style: italic;
 }
 
 .about .button {
     margin: 1rem 0;
-    width: 300px;
+    width: 350px;
     background-color: var(--secondary-color);
     border: 1px solid var(--secondary-color);
     color: #333;

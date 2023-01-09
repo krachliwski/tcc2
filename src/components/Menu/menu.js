@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 //import logo from './images/logo.png'
-import logo from '../../images/E-FLANELINHA2.png';
+import logo from '../../images/E-FLANELINHA.PNG';
 import './menu.css';
 
 const Menu = () => {
@@ -24,7 +24,7 @@ const Menu = () => {
                 </div>
                 <ul className={click ? "nav-menu active" : "nav-menu"}>
                     <li className='nav-item'>
-                        <a href='/about' onClick={closeMenu}>Detalhes</a>
+                        <a href='/' onClick={closeMenu}>Home</a>
                     </li>
                     <li className='nav-item'>
                         <a href='#' onClick={closeMenu}>Entrar</a>
