@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-//import logo from './images/logo.png'
 import logo from '../../images/E-FLANELINHA.PNG';
 import './menu.css';
 
@@ -30,10 +29,10 @@ const Menu = () => {
                         <a href='#' onClick={closeMenu}>Entrar</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#testimonials' onClick={closeMenu}>Cadastrar Vagas</a>
+                        <a href='login' onClick={closeMenu}>Cadastrar Vagas</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#demo' onClick={closeMenu}>Consultar Vagas</a>
+                        <a href='parking' onClick={closeMenu}>Consultar Vagas</a>
                     </li>
                 </ul>
             </nav>

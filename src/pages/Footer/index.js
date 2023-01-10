@@ -10,20 +10,21 @@ const Footer = () => {
                         <a href='/'>Home</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#about'>Entrar</a>
+                        <a href=''>Entrar</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#testimonials'>Cadastrar Vagas</a>
+                        <a href='login'>Cadastrar Vagas</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#demo'>Consultar vagas</a>
+                        <a href='parking'>Consultar vagas</a>
                     </li>
                 </ul>
                 <div className='bottom'>
                     <span className='line'></span>
                     <p>Centro Universitário Integrado </p>
                     <p>Trabalho de Conclusão de Curso - 2022 </p>
-                    <p>Mateus & Paulo </p>
+                    <p>Mateus Greco da Silva</p>
+                    <p>Paulo Ricardo Krachliwski</p>
                 </div>
             </div>
         </div>

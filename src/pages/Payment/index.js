@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './payment.css';
 import PIX from "react-qrcode-pix";
 import geraExtrato from '../../components/Functions/extrato';
-import calculaValor from '../../components/Functions/functions';
 import Axios from 'axios';
 //import { response } from 'express';
 
@@ -10,6 +9,7 @@ const now = new Date().getTime().toString();
 
 var codigo = "";
 var ValorPagar = 0;
+var Valor = 20;
 
 export default function PaymentArea() {
     const [generate, setGenerate] = useState(false);
@@ -67,7 +67,7 @@ export default function PaymentArea() {
                                         city="Campo Mourão"
                                         cep="87.308-510"
                                         code={"RQP" + now}
-                                        amount={25}
+                                        amount={Valor}
                                         onLoad={setFullPIX}
                                         resize={280}
                                         padding={30}

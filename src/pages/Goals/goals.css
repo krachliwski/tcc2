@@ -2,11 +2,10 @@
     width: 100%;
 }
 
-
 .goals .container {
     width: 1240px;
-    margin: 4rem auto;
-    padding: 4rem 0rem;
+    margin: 2rem auto;
+    padding: 2rem 0rem;
 }
 
 .goals h2 {
@@ -16,7 +15,7 @@
 
 .goals .container .content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     margin: 4rem 0;
 }
@@ -29,8 +28,9 @@
 }
 
 .goals img {
+    height: 200px;
     border-radius: 50px;
-    margin-top: -2rem;
+    margin-top: -1rem;
 }
 
 

@@ -1,9 +1,19 @@
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 
-function geraExtrato() {
+function geraExtrato(Vaga, DataE, HoraE, DataS, HoraS, Valor) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
+    const Valor1 = 10;
+    //const Valor = ValorPagar.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+    Valor = Valor1.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+    DataE = '10/01/2023';
+    HoraE = '14:50:50';
+    DataS = '10/01/2023';
+    HoraS = '15:10:20';
+    const Perm = 10 - 5;
+
+    //alert(Valor);
     const cabec = [
         {
             text: 'E-FLANELINHA',
@@ -13,25 +23,25 @@ function geraExtrato() {
     ];
 
     const campos = [
-        [{ text: 'CNPJ: 00.000.000/0000-00', style: 'campos' }],
-        [{ text: '_______________________________'           }],
-        [{ text: 'FONE: (00) 0000-0000', style: 'campos'     }],
-        [{ text: '_______________________________'           }],
-        [{ text: 'RECIBO DE ESTACIONAMENTO', style: 'campos' }],
-        [{ text: 'TICKET: 000001', style: 'campos'           }],
-        [{ text: 'BLOCO: A VAGA: 66', style: 'campos'        }],
-        [{ text: 'ENTRADA: AS ', style: 'campos'             }],
-        [{ text: 'SAIDA: AS ', style: 'campos'               }],
-        [{ text: 'PERMANENCIA: ', style: 'campos'            }],
-        [{ text: 'TIPO DE PAGAMENTO: PIX', style: 'campos'   }],
-        [{ text: '_______________________________'           }],
-        [{ text: 'VALOR TOTAL: ', style: 'cabec'             }],
-        [{ text: 'R$ 25,00', style: 'cabec'                  }],
+        [{ text: 'CNPJ: 00.000.000/0000-00', style: 'campos'            }],
+        [{ text: '_______________________________'                      }],
+        [{ text: 'FONE: (44) 0000-0000', style: 'campos'                }],
+        [{ text: '_______________________________'                      }],
+        [{ text: 'RECIBO DE ESTACIONAMENTO', style: 'campos'            }],
+        [{ text: 'TICKET: 000001', style: 'campos'                      }],
+        [{ text: 'BLOCO: A VAGA: 66', style: 'campos'                   }],
+        [{ text: 'ENTRADA: ' + DataE + ' AS ' + HoraE, style: 'campos'  }],
+        [{ text: 'SAIDA: ' + DataS + ' AS ' + HoraS, style: 'campos'    }],
+        [{ text: 'PERMANENCIA: ' + Perm, style: 'campos'                }],
+        [{ text: 'TIPO DE PAGAMENTO: PIX', style: 'campos'              }],
+        [{ text: '_______________________________'                      }],
+        [{ text: 'VALOR TOTAL: ', style: 'cabec'                        }],
+        [{ text: Valor, style: 'cabec'                                  }],
     ];
 
     const rodape = [
-        
-        [{ text: '_______________________________'             }],
+
+        [{ text: '_______________________________' }],
         [{ text: 'AGRADECEMOS A PREFERÊNCIA!', style: 'rodape' }]
     ];
 

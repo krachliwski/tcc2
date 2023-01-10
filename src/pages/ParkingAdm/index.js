@@ -11,6 +11,7 @@ import Axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import Card from "../../components/Cards/card";
+import Footer from '../Footer/index.js';
 
 export default function Parking() {
     const handleClickStatus = (values) => {
@@ -305,6 +306,7 @@ export default function Parking() {
                     }}>Sair</Button>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

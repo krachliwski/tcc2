@@ -7,6 +7,7 @@ import Ocup from '../../images/Occup.png';
 import Indisp from '../../images/Indisp.png';
 import Axios from 'axios';
 import Card from "../../components/Cards/card";
+import Footer from '../Footer/index.js';
 
 export default function Parking() {
   const refreshImg = (stat) => {
@@ -192,6 +193,7 @@ export default function Parking() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

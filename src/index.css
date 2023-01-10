@@ -45,6 +45,18 @@ code {
   cursor: pointer;
 }
 
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+li a {
+  text-decoration: none;
+}
+
 .button {
   padding: 17px 28px;
   font-size: 1.2rem;
