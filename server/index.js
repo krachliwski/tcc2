@@ -121,7 +121,7 @@ app.post("/paraTempo", (req, res) => {
 
 app.post("/calculaTempo", (req, res) => {
   const stat = req.body.stat;
-  db.query("SELECT TIMEDIFF(hora_saida,hora_chegada) FROM vagas WHERE bloco = 'A' AND codigo = '66' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag)",
+  db.query("SELECT CASE WHEN DIFF < '00:10:00' THEN '0' WHEN DIFF > '00:10:00' AND DIFF < '00:30:00' THEN '1' WHEN DIFF > '00:30:00' AND DIFF < '01:00:00' THEN '2' WHEN DIFF > '01:00:00' AND DIFF < '03:00:00' THEN '3' ELSE '4' END AS TEMPO FROM (SELECT TIMEDIFF(hora_saida,hora_chegada) AS DIFF FROM vagas WHERE bloco = 'A' AND codigo = '66' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag)) AS TESTE;",
     (err, result) => {
       if (result) {
         res.send(result);

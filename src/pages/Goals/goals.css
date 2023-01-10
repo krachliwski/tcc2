@@ -2,6 +2,7 @@
     width: 100%;
 }
 
+
 .goals .container {
     width: 1240px;
     margin: 4rem auto;
@@ -15,7 +16,7 @@
 
 .goals .container .content {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
     margin: 4rem 0;
 }
@@ -23,7 +24,7 @@
 .goals .card {
     border: 1px solid #eee;
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgb(0,0,0,.2);
+    box-shadow: 0 3px 10px rgb(0, 0, 0, .2);
     padding: 1rem;
 }
 
@@ -59,4 +60,3 @@
         margin: 1rem;
     }
 }
-

@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import './payment.css';
 import PIX from "react-qrcode-pix";
 import geraExtrato from '../../components/Functions/extrato';
-//import calculaValor from '../../components/Functions/functions';
+import calculaValor from '../../components/Functions/functions';
 import Axios from 'axios';
 //import { response } from 'express';
 
 const now = new Date().getTime().toString();
+
+var codigo = "";
+var ValorPagar = 0;
 
 export default function PaymentArea() {
     const [generate, setGenerate] = useState(false);
@@ -17,15 +20,25 @@ export default function PaymentArea() {
 
     const [fullPIX, setFullPIX] = useState("");
 
-    const calculaTempo = () => {
+    const calculaValor = () => {
         Axios.post("http://localhost:3001/calculaTempo", {
         }).then((response) => {
-            console.log(response.data)
+            codigo = response.data[0].TEMPO;
+
+            if (codigo == "0") {
+                ValorPagar = 0;
+            } else if (codigo == "1") {
+                ValorPagar = 5;
+            } else if (codigo == "2") {
+                ValorPagar = 10;
+            } else if (codigo == "3") {
+                ValorPagar = 15;
+            } else {
+                ValorPagar = 20;
+            }
         });
         { handleGenerate() }
-    };
-
-    //<> {calculaValor()}  </>
+    }
 
     return (
         <>
@@ -40,7 +53,7 @@ export default function PaymentArea() {
                             <div className='payment-title'>
                                 <span>Ao clicar no botão abaixo será gerado o QRCode para pagamento por Pix</span>
                                 <br />
-                                <button class="btn" onClick={calculaTempo}>GERAR QRCODE</button>
+                                <button class="btn" onClick={calculaValor}>GERAR QRCODE</button>
                             </div>
                         )}
 
