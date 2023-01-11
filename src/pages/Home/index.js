@@ -4,12 +4,14 @@ import Menu from '../../components/Menu/menu';
 import Footer from '../Footer/index.js';
 import About from '../About/index.js';
 import Goals from '../Goals/index.js';
+import Description from '../Description/index.js';
 
 export default function Home() {
   return (
     <div className="container-home">
       <Menu />
       <About />
+      <Description />
       <Goals />
       <Footer />
     </div>

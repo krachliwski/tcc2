@@ -1,0 +1,30 @@
+.description {
+    width: 100%;
+}
+
+.description .container {
+    width: 1240px;
+    margin: 2rem auto;
+    padding: 2rem 0rem;
+}
+
+.description h2 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.description .container .content p{
+    color: #787878;
+    font-size: 1.8rem;
+    margin: 12px;
+}
+
+@media screen and (max-width: 940px) {
+    .description .container {
+        width: 100%;
+    }
+
+    .description .container .content {
+        grid-template-columns: 1fr;
+    }
+}
