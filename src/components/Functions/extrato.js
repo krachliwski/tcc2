@@ -1,19 +1,16 @@
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 
-function geraExtrato(Vaga, DataE, HoraE, DataS, HoraS, Valor) {
+function geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, Valor) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
+    alert(Valor);
     const Valor1 = 10;
     //const Valor = ValorPagar.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-    Valor = Valor1.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-    DataE = '10/01/2023';
-    HoraE = '14:50:50';
-    DataS = '10/01/2023';
-    HoraS = '15:10:20';
+    Valor = Valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
     const Perm = 10 - 5;
 
-    //alert(Valor);
+    alert(Valor);
     const cabec = [
         {
             text: 'E-FLANELINHA',
@@ -29,7 +26,7 @@ function geraExtrato(Vaga, DataE, HoraE, DataS, HoraS, Valor) {
         [{ text: '_______________________________'                      }],
         [{ text: 'RECIBO DE ESTACIONAMENTO', style: 'campos'            }],
         [{ text: 'TICKET: 000001', style: 'campos'                      }],
-        [{ text: 'BLOCO: A VAGA: 66', style: 'campos'                   }],
+        [{ text: 'BLOCO: ' + Bloco + ' VAGA: ' + Vaga, style: 'campos'  }],
         [{ text: 'ENTRADA: ' + DataE + ' AS ' + HoraE, style: 'campos'  }],
         [{ text: 'SAIDA: ' + DataS + ' AS ' + HoraS, style: 'campos'    }],
         [{ text: 'PERMANENCIA: ' + Perm, style: 'campos'                }],

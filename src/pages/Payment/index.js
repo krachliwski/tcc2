@@ -3,13 +3,18 @@ import './payment.css';
 import PIX from "react-qrcode-pix";
 import geraExtrato from '../../components/Functions/extrato';
 import Axios from 'axios';
-//import { response } from 'express';
 
 const now = new Date().getTime().toString();
 
-var codigo = "";
+var codigo = "3";
 var ValorPagar = 0;
 var Valor = 20;
+var Bloco = 'A';
+var Vaga  = '66';
+var DataE = '10/01/2023';
+var HoraE = '14:50:50';
+var DataS = '10/01/2023';
+var HoraS = '15:10:20';
 
 export default function PaymentArea() {
     const [generate, setGenerate] = useState(false);
@@ -38,6 +43,10 @@ export default function PaymentArea() {
             }
         });
         { handleGenerate() }
+    }
+
+    const chamaExtrato = () => {
+        const res = geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, ValorPagar);
     }
 
     return (
@@ -73,7 +82,7 @@ export default function PaymentArea() {
                                         padding={30}
                                     />
                                 </div>
-                                <button button class='btn' onClick={geraExtrato}>GERAR PDF</button>
+                                <button button class='btn' onClick={chamaExtrato}>GERAR PDF</button>
                             </div>
                         )}
                     </div>
