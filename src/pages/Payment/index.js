@@ -65,10 +65,10 @@ export default function PaymentArea() {
             DataS = response.data[0].data_saida;
             HoraS = response.data[0].hora_saida;
         });
-        {permanencia()}
+        { permanencia() }
     };
 
-    {dadosExtrato()}
+    { dadosExtrato() }
 
     const chamaExtrato = () => {
         const res = geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, ValorPagar, Perm);
