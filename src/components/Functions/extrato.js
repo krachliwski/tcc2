@@ -1,14 +1,14 @@
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 
-function geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, Valor) {
+function geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, Valor, Perm) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
     alert(Valor);
     const Valor1 = 10;
     //const Valor = ValorPagar.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
     Valor = Valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-    const Perm = 10 - 5;
+    
 
     alert(Valor);
     const cabec = [

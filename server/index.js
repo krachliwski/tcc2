@@ -85,6 +85,17 @@ app.get("/getCards", (req, res) => {
     else res.send(result);
   })
 })
+
+app.post("/dadosExtrato", (req, res) => {
+  const stat = req.body.stat;
+  db.query("SELECT bloco, codigo, DATE_FORMAT(data_chegada,'%d/%m/%Y') AS data_chegada, hora_chegada, DATE_FORMAT(data_chegada, '%d/%m/%Y') AS data_saida, hora_saida FROM vagas WHERE codigo = '66' ORDER BY id DESC LIMIT 1",
+    (err, result) => {
+      if (result) {
+        res.send(result);
+      }
+    });
+});
+
 /*
 app.post("/mapa", (req, res) => {
   const stat = req.body.stat;
@@ -121,13 +132,24 @@ app.post("/paraTempo", (req, res) => {
 
 app.post("/calculaTempo", (req, res) => {
   const stat = req.body.stat;
-  db.query("SELECT CASE WHEN DIFF < '00:10:00' THEN '0' WHEN DIFF > '00:10:00' AND DIFF < '00:30:00' THEN '1' WHEN DIFF > '00:30:00' AND DIFF < '01:00:00' THEN '2' WHEN DIFF > '01:00:00' AND DIFF < '03:00:00' THEN '3' ELSE '4' END AS TEMPO FROM (SELECT TIMEDIFF(hora_saida,hora_chegada) AS DIFF FROM vagas WHERE bloco = 'A' AND codigo = '66' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag)) AS TESTE;",
+  db.query("SELECT CASE WHEN DIFF < '00:10:00' THEN '0' WHEN DIFF >= '00:10:00' AND DIFF < '00:30:00' THEN '1' WHEN DIFF >= '00:30:00' AND DIFF < '01:00:00' THEN '2' WHEN DIFF >= '01:00:00' AND DIFF < '03:00:00' THEN '3' ELSE '4' END AS TEMPO FROM (SELECT TIMEDIFF(hora_saida,hora_chegada) AS DIFF FROM vagas WHERE bloco = 'A' AND codigo = '66' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag)) AS TESTE;",
     (err, result) => {
       if (result) {
         res.send(result);
       }
     });
 });
+
+app.post("/permanencia", (req, res) => {
+  const stat = req.body.stat;
+  db.query("SELECT TIMEDIFF(hora_saida,hora_chegada) AS permanencia FROM vagas WHERE bloco = 'A' AND codigo = '66' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag);",
+    (err, result) => {
+      if (result) {
+        res.send(result);
+      }
+    });
+});
+
 /*
 app.post("/ocupaVaga", (req, res) => {
   const stat = req.body.stat;

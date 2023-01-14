@@ -6,15 +6,16 @@ import Axios from 'axios';
 
 const now = new Date().getTime().toString();
 
-var codigo = "3";
-var ValorPagar = 0;
-var Valor = 20;
-var Bloco = 'A';
-var Vaga  = '66';
-var DataE = '10/01/2023';
-var HoraE = '14:50:50';
-var DataS = '10/01/2023';
-var HoraS = '15:10:20';
+var codigo = "";
+var Perm = '';
+var ValorPagar = Valor;
+var Valor = 0;
+var Bloco = '';
+var Vaga = '';
+var DataE = '';
+var HoraE = '';
+var DataS = '';
+var HoraS = '';
 
 export default function PaymentArea() {
     const [generate, setGenerate] = useState(false);
@@ -24,6 +25,14 @@ export default function PaymentArea() {
     }
 
     const [fullPIX, setFullPIX] = useState("");
+
+    const permanencia = () => {
+        Axios.post("http://localhost:3001/permanencia", {
+        }).then((response) => {
+
+            Perm = response.data[0].permanencia;
+        });
+    };
 
     const calculaValor = () => {
         Axios.post("http://localhost:3001/calculaTempo", {
@@ -45,8 +54,24 @@ export default function PaymentArea() {
         { handleGenerate() }
     }
 
+    const dadosExtrato = () => {
+        Axios.post("http://localhost:3001/dadosExtrato", {
+        }).then((response) => {
+
+            Bloco = response.data[0].bloco;
+            Vaga = response.data[0].codigo;
+            DataE = response.data[0].data_chegada;
+            HoraE = response.data[0].hora_chegada;
+            DataS = response.data[0].data_saida;
+            HoraS = response.data[0].hora_saida;
+        });
+        {permanencia()}
+    };
+
+    {dadosExtrato()}
+
     const chamaExtrato = () => {
-        const res = geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, ValorPagar);
+        const res = geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, ValorPagar, Perm);
     }
 
     return (
@@ -56,7 +81,6 @@ export default function PaymentArea() {
                     <div className='payment-title'>
                         <h3>Bem-vindo ao pagamento automatizado</h3>
                     </div>
-
                     <div className='payment-body'>
                         {!generate && (
                             <div className='payment-title'>
@@ -76,7 +100,7 @@ export default function PaymentArea() {
                                         city="Campo Mourão"
                                         cep="87.308-510"
                                         code={"RQP" + now}
-                                        amount={Valor}
+                                        amount={ValorPagar}
                                         onLoad={setFullPIX}
                                         resize={280}
                                         padding={30}
