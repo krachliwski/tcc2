@@ -10,7 +10,7 @@ const Footer = () => {
                         <a href='/'>Home</a>
                     </li>
                     <li className='nav-item'>
-                        <a href=''>Entrar</a>
+                        <a href='login'>Entrar</a>
                     </li>
                     <li className='nav-item'>
                         <a href='login'>Cadastrar Vagas</a>

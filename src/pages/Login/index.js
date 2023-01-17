@@ -6,6 +6,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import Axios from 'axios';
 import * as yup from "yup";
 import swal from 'sweetalert2';
+import Footer from '../Footer/index.js';
 
 function login() {
     const handleClickLogin = (values) => {
@@ -62,10 +63,11 @@ function login() {
     });
 
     return (
-        <div className="Back">
+        <div className="container-login">
             <Menu />
             <div>
                 <div className="Login-Box">
+                    <h3>Login</h3>
                     <Formik initialValues={{}} onSubmit={handleClickLogin} validationSchema={validationLogin}>
                         <Form name="formLogin" method="post" data-parsley-validate="">
                             <div>
@@ -109,6 +111,7 @@ function login() {
                     </Formik>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

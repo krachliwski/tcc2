@@ -26,7 +26,7 @@ const Menu = () => {
                         <a href='/' onClick={closeMenu}>Home</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#' onClick={closeMenu}>Entrar</a>
+                        <a href='login' onClick={closeMenu}>Entrar</a>
                     </li>
                     <li className='nav-item'>
                         <a href='login' onClick={closeMenu}>Cadastrar Vagas</a>
