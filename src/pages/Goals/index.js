@@ -1,5 +1,5 @@
 import React from 'react';
-import Timer from '../../images/timer1.png';
+import Timer from '../../images/timer.png';
 import Money from '../../images/money.png';
 import Stress from '../../images/stress.png';
 import Aval from '../../images/avaliacao.png';
