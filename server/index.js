@@ -21,13 +21,10 @@ app.post("/status", (req, res) => {
   const bloco = req.body.bloco;
   const vaga = req.body.vaga;
 
-  db.query("SELECT status FROM vaga_status WHERE bloco = ? AND codigo = ?", [bloco, vaga],
+  db.query("SELECT status FROM vaga_status WHERE bloco = ? AND codigo = ? ", [bloco, vaga],
     (err, result) => {
       if (err) {
         res.send(err);
-      }
-      if (result.lenght != 1) {
-        res.send("Vaga Inexistente!");
       }
       if (result[0].status == 'D') {
         db.query("UPDATE vaga_status SET status = 'I' WHERE bloco = ? AND codigo = ? ", [bloco, vaga]);
@@ -35,6 +32,8 @@ app.post("/status", (req, res) => {
       } else if (result[0].status == 'I') {
         db.query("UPDATE vaga_status SET status = 'D' WHERE bloco = ? AND codigo = ? ", [bloco, vaga]);
         res.send("Vaga Alterada!");
+      } else if (result[0].status == '') {
+        res.send("Vaga Inexistente!");
       } else {
         res.send("Vaga Ocupada!")
       }
