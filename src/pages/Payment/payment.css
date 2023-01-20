@@ -5,9 +5,6 @@
     text-align: center;
     height: 100vh;
     width: 100vw;
-    /*
-    background: #03045e;
-    */
     background-color: #000;
     padding: 45px;
 }
@@ -36,7 +33,7 @@
 
 .payment-title h3 {
     color: white;
-    font-size: 55px;
+    font-size: 45px;
 }
 
 .payment-title span {
