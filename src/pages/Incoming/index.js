@@ -87,20 +87,42 @@ export default function Incoming() {
         <div className='container-incoming'>
             <div className='border-incoming'>
                 <h3>Bem-Vindo ao atendimento virtual!</h3>
+                <div className="tabela-precos">
+                    <table class="darkTable">
+                        <thead>
+                            <tr>
+                                <th>Tabela de Preços</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Menos de 10 Minutos</td><td>Gratuito</td></tr>
+                            <tr>
+                                <td>De 10 à 30 Minutos</td><td>R$5,00</td></tr>
+                            <tr>
+                                <td>De 30 Minutos à 1 Hora</td><td>R$10,00</td></tr>
+                            <tr>
+                                <td>De 1 Hora à 3 Horas</td><td>R$15,00</td></tr>
+                            <tr>
+                                <td>Mais de 3 Horas</td><td>R$20,00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
                 <h3>VAGA 01</h3>
                 {start && (
                     <button class='btn' onClick={iniciaTempo}>INICIAR TEMPO</button>
                 )}
                 {stop && (
                     <>
-                    <Timer time={time} />
-                    <button class='btn' onClick={paraTempo}>PARAR TEMPO</button>
+                        <Timer time={time} />
+                        <button class='btn' onClick={paraTempo}>PARAR TEMPO</button>
                     </>
                 )}
                 {pay && (
                     <>
-                    <Timer time={time} />
-                    <button class='btn' onClick={liberaVaga}>PAGAMENTO</button>
+                        <Timer time={time} />
+                        <button class='btn' onClick={liberaVaga}>PAGAMENTO</button>
                     </>
                 )}
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './login.css';
 import Menu from '../../components/Menu/menu';
 import { Button } from 'react-bootstrap';
@@ -9,18 +9,36 @@ import swal from 'sweetalert2';
 import Footer from '../Footer/index.js';
 
 function login() {
+
+    const [logado, setLogado] = useState(false);
+
+    const Autenticado = () => {
+        setLogado(true);
+    };
+
+    const [deslogado, setDeslogado] = useState(false);
+
+    const Desautenticado = () => {
+        setDeslogado(true);
+    };
+
     const handleClickLogin = (values) => {
         Axios.post("http://localhost:3001/login", {
             nome: values.nome,
             senha: values.senha
         }).then((response) => {
             if (response.data == "Usuário Logado!") {
+                { Autenticado() }
                 swal.fire({
                     title: response.data,
-                    type: "success"
-                }).then(okay => {
-                    if (okay) {
+                    showDenyButton: true,
+                    confirmButtonText: 'Ir para ADM',
+                    denyButtonText: 'Ficar nesta Página'
+                }).then((result) => {
+                    if (result.isConfirmed) {
                         window.location.href = "/ParkingAdm";
+                    } else {
+                        
                     }
                 });
             } else {
@@ -86,29 +104,34 @@ function login() {
                         </Form>
                     </Formik>
                     <br />
-                    <h3>Cadastrar</h3>
-                    <Formik initialValues={{}} onSubmit={handleClickRegister} validationSchema={validationRegister}>
-                        <Form name="formLogin" method="post" data-parsley-validate="">
-                            <div>
-                                <label for="login">Nome</label>
-                                <Field type="text" name="nome" id="login" class="form-control" />
-                                <ErrorMessage component="span" name="nome" className="form-erro" />
-                            </div>
-                            <div>
-                                <label for="senha">Senha</label>
-                                <Field type="password" name="senha" id="senha" class="form-control" />
-                                <ErrorMessage component="span" name="senha" className="form-erro" />
-                            </div>
-                            <div>
-                                <label for="senha">Confirme a Senha</label>
-                                <Field type="password" name="confirmation" id="senha" class="form-control" />
-                                <ErrorMessage component="span" name="confirmation" className="form-erro" />
-                            </div>
-                            <div className="buttons">
-                                <Button type="submit">Concluir</Button>
-                            </div>
-                        </Form>
-                    </Formik>
+                    {logado
+                        ? <div>
+                            <h3>Cadastrar</h3>
+                            <Formik initialValues={{}} onSubmit={handleClickRegister} validationSchema={validationRegister}>
+                                <Form name="formLogin" method="post" data-parsley-validate="">
+                                    <div>
+                                        <label for="login">Nome</label>
+                                        <Field type="text" name="nome" id="login" class="form-control" />
+                                        <ErrorMessage component="span" name="nome" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="senha">Senha</label>
+                                        <Field type="password" name="senha" id="senha" class="form-control" />
+                                        <ErrorMessage component="span" name="senha" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="senha">Confirme a Senha</label>
+                                        <Field type="password" name="confirmation" id="senha" class="form-control" />
+                                        <ErrorMessage component="span" name="confirmation" className="form-erro" />
+                                    </div>
+                                    <div className="buttons">
+                                        <Button type="submit">Concluir</Button>
+                                    </div>
+                                </Form>
+                            </Formik>
+                        </div>
+                        : <h3>Faça Login para cadastrar outro usuário</h3>
+                    }
                 </div>
             </div>
             <Footer />

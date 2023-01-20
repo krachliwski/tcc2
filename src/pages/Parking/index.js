@@ -62,6 +62,28 @@ export default function Parking() {
         <>
           {refreshImg()}
         </>
+        <div className="tabela-precos">
+          <table class="darkTable">
+            <thead>
+              <tr>
+                <th>Tabela de Preços</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Menos de 10 Minutos</td><td>Gratuito</td></tr>
+              <tr>
+                <td>De 10 à 30 Minutos</td><td>R$5,00</td></tr>
+              <tr>
+                <td>De 30 Minutos à 1 Hora</td><td>R$10,00</td></tr>
+              <tr>
+                <td>De 1 Hora à 3 Horas</td><td>R$15,00</td></tr>
+              <tr>
+                <td>Mais de 3 Horas</td><td>R$20,00</td></tr>
+            </tbody>
+          </table>
+        </div>
         <Carousel>
           <Carousel.Item interval={100000}>
             <div id="NomeBloco">
