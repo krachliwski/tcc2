@@ -1,5 +1,7 @@
+import React from 'react';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import Barcode from 'react-barcode';
 
 function geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, Valor, Perm) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -7,7 +9,8 @@ function geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, Valor, Perm) {
     const Valor1 = 10;
     //const Valor = ValorPagar.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
     Valor = Valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-    
+
+    var barcode = <Barcode value="1234567890" format="CODE128"/>;
 
     const cabec = [
         {
@@ -37,7 +40,8 @@ function geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, Valor, Perm) {
     const rodape = [
 
         [{ text: '_______________________________' }],
-        [{ text: 'AGRADECEMOS A PREFERÊNCIA!', style: 'rodape' }]
+        [{ text: 'AGRADECEMOS A PREFERÊNCIA!', style: 'rodape' }],
+        [{ text: barcode }]
     ];
 
     const docDefinition = {
