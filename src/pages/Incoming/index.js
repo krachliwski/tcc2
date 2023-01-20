@@ -41,11 +41,20 @@ export default function Incoming() {
         {handleStop()}
     };
 
+    const liberaVaga = (stat) => {
+        Axios.post("http://localhost:3001/liberaVaga", {
+            stat: 'Z',
+        }).then((response) => {
+            console.log(response.data)
+        });
+        {ToPayment()}
+    };
+
     return (
         <div className='container-incoming'>
             <div className='border-incoming'>
                 <h3>Bem-Vindo ao atendimento virtual!</h3>
-                <h3>VAGA 66</h3>
+                <h3>VAGA 01</h3>
                 {start && (
                     <button class='btn' onClick={iniciaTempo}>INICIAR TEMPO</button>
                 )}
@@ -53,7 +62,7 @@ export default function Incoming() {
                     <button class='btn' onClick={paraTempo}>PARAR TEMPO</button>
                 )}
                 {pay && (
-                    <button class='btn' onClick={ToPayment}>PAGAMENTO</button>
+                    <button class='btn' onClick={liberaVaga}>PAGAMENTO</button>
                 )}
             </div>
         </div>

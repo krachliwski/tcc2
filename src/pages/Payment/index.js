@@ -106,7 +106,7 @@ export default function PaymentArea() {
                                         padding={30}
                                     />
                                 </div>
-                                <button button class='btn' onClick={chamaExtrato}>GERAR PDF</button>
+                                <button button class='btn' onClick={chamaExtrato}>GERAR EXTRATO</button>
                             </div>
                         )}
                     </div>

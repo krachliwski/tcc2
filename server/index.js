@@ -87,7 +87,7 @@ app.get("/getCards", (req, res) => {
 
 app.post("/dadosExtrato", (req, res) => {
   const stat = req.body.stat;
-  db.query("SELECT bloco, codigo, DATE_FORMAT(data_chegada,'%d/%m/%Y') AS data_chegada, hora_chegada, DATE_FORMAT(data_chegada, '%d/%m/%Y') AS data_saida, hora_saida FROM vagas WHERE codigo = '66' ORDER BY id DESC LIMIT 1",
+  db.query("SELECT bloco, codigo, DATE_FORMAT(data_chegada,'%d/%m/%Y') AS data_chegada, hora_chegada, DATE_FORMAT(data_chegada, '%d/%m/%Y') AS data_saida, hora_saida FROM vagas WHERE codigo = '01' ORDER BY id DESC LIMIT 1",
     (err, result) => {
       if (result) {
         res.send(result);
@@ -109,29 +109,37 @@ app.post("/mapa", (req, res) => {
 */
 app.post("/iniciaTempo", (req, res) => {
   const stat = req.body.stat;
-  db.query("INSERT INTO vagas (bloco, codigo, data_chegada, hora_chegada) VALUES ('A', '66', TIME(current_date()), TIME(current_timestamp()))",
+  db.query("INSERT INTO vagas (bloco, codigo, data_chegada, hora_chegada) VALUES ('A', '01', TIME(current_date()), TIME(current_timestamp()))",
     (err, result) => {
       if (result) {
         res.send(result);
-        db.query("UPDATE vaga_status SET status = 'O' WHERE bloco = 'A' AND codigo = '66' ");
+        db.query("UPDATE vaga_status SET status = 'O' WHERE bloco = 'A' AND codigo = '01' ");
       }
     });
 });
 
 app.post("/paraTempo", (req, res) => {
   const stat = req.body.stat;
-  db.query("UPDATE vagas SET data_saida = TIME(current_date()), hora_saida = TIME(current_timestamp()) WHERE bloco = 'A' AND codigo = '66' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag)",
+  db.query("UPDATE vagas SET data_saida = TIME(current_date()), hora_saida = TIME(current_timestamp()) WHERE bloco = 'A' AND codigo = '01' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag)",
     (err, result) => {
       if (result) {
         res.send(result);
-        db.query("UPDATE vaga_status SET status = 'D' WHERE bloco = 'A' AND codigo = '66' ");
+      }
+    });
+});
+
+app.post("/liberaVaga", (req, res) => {
+  db.query("UPDATE vaga_status SET status = 'D' WHERE bloco = 'A' AND codigo = '01' ",
+    (err, result) => {
+      if (result) {
+        res.send(result);
       }
     });
 });
 
 app.post("/calculaTempo", (req, res) => {
   const stat = req.body.stat;
-  db.query("SELECT CASE WHEN DIFF < '00:10:00' THEN '0' WHEN DIFF >= '00:10:00' AND DIFF < '00:30:00' THEN '1' WHEN DIFF >= '00:30:00' AND DIFF < '01:00:00' THEN '2' WHEN DIFF >= '01:00:00' AND DIFF < '03:00:00' THEN '3' ELSE '4' END AS TEMPO FROM (SELECT TIMEDIFF(hora_saida,hora_chegada) AS DIFF FROM vagas WHERE bloco = 'A' AND codigo = '66' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag)) AS TESTE;",
+  db.query("SELECT CASE WHEN DIFF < '00:10:00' THEN '0' WHEN DIFF >= '00:10:00' AND DIFF < '00:30:00' THEN '1' WHEN DIFF >= '00:30:00' AND DIFF < '01:00:00' THEN '2' WHEN DIFF >= '01:00:00' AND DIFF < '03:00:00' THEN '3' ELSE '4' END AS TEMPO FROM (SELECT TIMEDIFF(hora_saida,hora_chegada) AS DIFF FROM vagas WHERE bloco = 'A' AND codigo = '01' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag)) AS TESTE;",
     (err, result) => {
       if (result) {
         res.send(result);
@@ -141,7 +149,7 @@ app.post("/calculaTempo", (req, res) => {
 
 app.post("/permanencia", (req, res) => {
   const stat = req.body.stat;
-  db.query("SELECT TIMEDIFF(hora_saida,hora_chegada) AS permanencia FROM vagas WHERE bloco = 'A' AND codigo = '66' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag);",
+  db.query("SELECT TIMEDIFF(hora_saida,hora_chegada) AS permanencia FROM vagas WHERE bloco = 'A' AND codigo = '01' AND id IN (SELECT id FROM (SELECT MAX(id) AS id FROM vagas) AS vag);",
     (err, result) => {
       if (result) {
         res.send(result);
