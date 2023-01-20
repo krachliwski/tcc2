@@ -77,7 +77,25 @@ app.post("/excluivaga", (req, res) => {
 });
 
 app.get("/getCards", (req, res) => {
-  let SQL = "SELECT status, codigo FROM vaga_status"
+  let SQL = "SELECT status, codigo FROM vaga_status WHERE bloco = 'A'"
+
+  db.query(SQL, (err, result) => {
+    if(err) console.log(err);
+    else res.send(result);
+  })
+})
+
+app.get("/getCardsB", (req, res) => {
+  let SQL = "SELECT status, codigo FROM vaga_status WHERE bloco = 'B'"
+
+  db.query(SQL, (err, result) => {
+    if(err) console.log(err);
+    else res.send(result);
+  })
+})
+
+app.get("/getCardsC", (req, res) => {
+  let SQL = "SELECT status, codigo FROM vaga_status WHERE bloco = 'C'"
 
   db.query(SQL, (err, result) => {
     if(err) console.log(err);

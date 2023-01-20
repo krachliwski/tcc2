@@ -8,6 +8,7 @@ import Indisp from '../../images/Indisp.png';
 import Axios from 'axios';
 import Card from "../../components/Cards/card";
 import Footer from '../Footer/index.js';
+import { Carousel } from 'react-bootstrap';
 
 export default function Parking() {
   const refreshImg = (stat) => {
@@ -27,6 +28,24 @@ export default function Parking() {
     })
   }, [])
 
+  console.log(listVagasB);
+  const [listVagasB, setListVagasB] = useState();
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/getCardsB").then((response) => {
+      setListVagasB(response.data);
+    })
+  }, [])
+
+  console.log(listVagasC);
+  const [listVagasC, setListVagasC] = useState();
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/getCardsC").then((response) => {
+      setListVagasC(response.data);
+    })
+  }, [])
+
   const ocup = <img src={Ocup} alt="Ocup" width="20" height="25" />;
   const disp = <img src={Free} alt="Free" width="20" height="25" />;
   const indisp = <img src={Indisp} alt="Indisp" width="20" height="25" />;
@@ -40,26 +59,68 @@ export default function Parking() {
           <a><a className='ocupado'></a>  Vaga Ocupada</a>
           <a><a className='indisponivel'></a>  Vaga Indisponível</a>
         </div>
-        <div id="NomeBloco">
-          <a>Bloco A</a>
-        </div>
         <>
           {refreshImg()}
         </>
-        <div id="Planta" style={{ backgroundColor: `#161A25` }}>
-          <div className='parent'>
-            {typeof listVagas !== "undefined" && listVagas.map((value) => {
-              return (
-                <Card
-                  key={value.codigo}
-                  listCard={listVagas}
-                  setListVagas={setListVagas}
-                  codigo={value.codigo}
-                  status={value.status}
-                ></Card>);
-            })}
-          </div>
-        </div>
+        <Carousel>
+          <Carousel.Item interval={100000}>
+            <div id="NomeBloco">
+              <a>Bloco A</a>
+            </div>
+            <div id="Planta" style={{ backgroundColor: `#161A25` }}>
+              <div className='parent'>
+                {typeof listVagas !== "undefined" && listVagas.map((value) => {
+                  return (
+                    <Card
+                      key={value.codigo}
+                      listCard={listVagas}
+                      setListVagas={setListVagas}
+                      codigo={value.codigo}
+                      status={value.status}
+                    ></Card>);
+                })}
+              </div>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item interval={100000}>
+            <div id="NomeBloco">
+              <a>Bloco B</a>
+            </div>
+            <div id="Planta" style={{ backgroundColor: `#161A25` }}>
+              <div className='parent'>
+                {typeof listVagasB !== "undefined" && listVagasB.map((value) => {
+                  return (
+                    <Card
+                      key={value.codigo}
+                      listCard={listVagasB}
+                      setListVagasB={setListVagasB}
+                      codigo={value.codigo}
+                      status={value.status}
+                    ></Card>);
+                })}
+              </div>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item interval={100000}>
+            <div id="NomeBloco">
+              <a>Bloco C</a>
+            </div>
+            <div id="Planta" style={{ backgroundColor: `#161A25` }}>
+              <div className='parent'>
+                {typeof listVagasC !== "undefined" && listVagasC.map((value) => {
+                  return (
+                    <Card
+                      key={value.codigo}
+                      listCard={listVagasC}
+                      setListVagasC={setListVagasC}
+                      codigo={value.codigo}
+                      status={value.status}
+                    ></Card>);
+                })}
+              </div>
+            </div>
+          </Carousel.Item>
+        </Carousel>
       </div>
       <Footer />
     </div>
