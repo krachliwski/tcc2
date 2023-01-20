@@ -27,9 +27,6 @@ export default function Card(props) {
 
   return (
     <div className="card--container">
-      <>
-
-      </>
       <h3 className="card--status">{status}</h3>
       <p className="card--codigo">{props.codigo}</p>
     </div>
