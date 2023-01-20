@@ -196,9 +196,9 @@ export default function Parking() {
             <div class="div-h1">
                 <h1>Estacionamento - Administração</h1>
                 <div id="Legenda">
-                    <a><img alt="Free" src={Free} width="28" height="40" />  Vaga Livre</a>
-                    <a><img alt="Ocup" src={Ocup} width="28" height="40" />  Vaga Ocupada</a>
-                    <a><img alt="Indisp" src={Indisp} width="28" height="40" />  Vaga Indisponível</a>
+                    <a><a className='disponivel'></a>  Vaga Livre</a>
+                    <a><a className='ocupado'></a>  Vaga Ocupada</a>
+                    <a><a className='indisponivel'></a>  Vaga Indisponível</a>
                 </div>
                 <div id="NomeBloco">
                     <a>Bloco A</a>
@@ -227,12 +227,12 @@ export default function Parking() {
                             <Form name="formStatus" method="post" data-parsley-validate="">
                                 <div>
                                     <div>
-                                        <label for="login">Bloco:</label>
+                                        <h6 for="login">Bloco:</h6>
                                         <Field type="text" name="bloco" id="bloco" class="form-control" />
                                         <ErrorMessage component="span" name="bloco" className="form-erro" />
                                     </div>
                                     <div>
-                                        <label for="senha">Vaga:</label>
+                                        <h6 for="senha">Vaga:</h6>
                                         <Field type="number" name="vaga" id="vaga" class="form-control" min="01" max="50" />
                                         <ErrorMessage component="span" name="vaga" className="form-erro" />
                                     </div>
@@ -248,12 +248,12 @@ export default function Parking() {
                             <Form name="formStatus" method="post" data-parsley-validate="">
                                 <div>
                                     <div>
-                                        <label for="login">Bloco:</label>
+                                        <h6 for="login">Bloco:</h6>
                                         <Field type="text" name="bloco" id="bloco" class="form-control" />
                                         <ErrorMessage component="span" name="bloco" className="form-erro" />
                                     </div>
                                     <div>
-                                        <label for="senha">Vaga:</label>
+                                        <h6 for="senha">Vaga:</h6>
                                         <Field type="number" name="vaga" id="vaga" class="form-control" min="01" max="50" />
                                         <ErrorMessage component="span" name="vaga" className="form-erro" />
                                     </div>
@@ -269,12 +269,12 @@ export default function Parking() {
                             <Form name="formStatus" method="post" data-parsley-validate="">
                                 <div>
                                     <div>
-                                        <label for="login">Bloco:</label>
+                                        <h6 for="login">Bloco:</h6>
                                         <Field type="text" name="bloco" id="bloco" class="form-control" />
                                         <ErrorMessage component="span" name="bloco" className="form-erro" />
                                     </div>
                                     <div>
-                                        <label for="senha">Vaga:</label>
+                                        <h6 for="senha">Vaga:</h6>
                                         <Field type="number" name="vaga" id="vaga" class="form-control" min="01" max="70" />
                                         <ErrorMessage component="span" name="vaga" className="form-erro" />
                                     </div>

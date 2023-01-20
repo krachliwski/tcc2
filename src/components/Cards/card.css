@@ -10,3 +10,30 @@
     color: white;
     text-shadow: 0 0 5px #168aad;
 }
+
+.ocupado {
+    border-radius: 50%;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    border: 1px solid #000000;
+    background-color: red;
+}
+
+.indisponivel {
+    border-radius: 50%;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    border: 1px solid #000000;
+    background-color: yellow;
+}
+
+.disponivel {
+    border-radius: 50%;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    border: 1px solid #000000;
+    background-color: limegreen;
+}

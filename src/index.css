@@ -4,6 +4,9 @@
   --secondary-color: #ffea00;
   --secondary-dark:#e3d002;
   --overlay: rgba(0,0,0,.7);
+  --estilo-fonte: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
 
 * {
