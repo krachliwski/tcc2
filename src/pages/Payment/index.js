@@ -80,8 +80,9 @@ export default function PaymentArea() {
                 <div className='border-payment'>
                     <div className='payment-title'>
                         <h3>Bem-vindo ao pagamento automatizado</h3>
+                        <h3>Permanência: {Perm}</h3>
                         <span>Valor da estadia</span>
-                        <h3>R$</h3>
+                        <h3>R${Valor}</h3>
                     </div>
                     <div className='payment-body'>
                         {!generate && (

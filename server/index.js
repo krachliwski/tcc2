@@ -103,6 +103,24 @@ app.get("/getCardsC", (req, res) => {
   })
 })
 
+app.get("/getCardsD", (req, res) => {
+  let SQL = "SELECT status, codigo FROM vaga_status WHERE bloco = 'D'"
+
+  db.query(SQL, (err, result) => {
+    if(err) console.log(err);
+    else res.send(result);
+  })
+})
+
+app.get("/getCardsE", (req, res) => {
+  let SQL = "SELECT status, codigo FROM vaga_status WHERE bloco = 'E'"
+
+  db.query(SQL, (err, result) => {
+    if(err) console.log(err);
+    else res.send(result);
+  })
+})
+
 app.post("/dadosExtrato", (req, res) => {
   const stat = req.body.stat;
   db.query("SELECT bloco, codigo, DATE_FORMAT(data_chegada,'%d/%m/%Y') AS data_chegada, hora_chegada, DATE_FORMAT(data_chegada, '%d/%m/%Y') AS data_saida, hora_saida FROM vagas WHERE codigo = '01' ORDER BY id DESC LIMIT 1",

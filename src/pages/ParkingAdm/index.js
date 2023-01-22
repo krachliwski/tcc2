@@ -59,33 +59,99 @@ export default function Parking() {
             { refreshImg() };
         });
     };
+
     console.log(listVagas);
     const [listVagas, setListVagas] = useState();
 
     useEffect(() => {
         Axios.get("http://localhost:3001/getCards").then((response) => {
             setListVagas(response.data);
+            if (response.data[0]) {
+                { VagasA() }
+            }
         })
     }, [])
 
+    const [temVagaA, setTemVagasA] = useState(false);
+
+    const VagasA = () => {
+        setTemVagasA(true);
+    };
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
     console.log(listVagasB);
     const [listVagasB, setListVagasB] = useState();
 
     useEffect(() => {
         Axios.get("http://localhost:3001/getCardsB").then((response) => {
             setListVagasB(response.data);
+            if (response.data[0]) {
+                { VagasB() }
+            }
         })
     }, [])
 
+    const [temVagaB, setTemVagasB] = useState(false);
+
+    const VagasB = () => {
+        setTemVagasB(true);
+    };
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
     console.log(listVagasC);
     const [listVagasC, setListVagasC] = useState();
 
     useEffect(() => {
         Axios.get("http://localhost:3001/getCardsC").then((response) => {
             setListVagasC(response.data);
+            if (response.data[0]) {
+                { VagasC() }
+            }
         })
     }, [])
 
+    const [temVagaC, setTemVagasC] = useState(false);
+
+    const VagasC = () => {
+        setTemVagasC(true);
+    };
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    console.log(listVagasD);
+    const [listVagasD, setListVagasD] = useState();
+
+    useEffect(() => {
+        Axios.get("http://localhost:3001/getCardsD").then((response) => {
+            setListVagasD(response.data);
+            if (response.data[0]) {
+                { VagasD() }
+            }
+        })
+    }, [])
+
+    const [temVagaD, setTemVagasD] = useState(false);
+
+    const VagasD = () => {
+        setTemVagasD(true);
+    };
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    console.log(listVagasE);
+    const [listVagasE, setListVagasE] = useState();
+
+    useEffect(() => {
+        Axios.get("http://localhost:3001/getCardsE").then((response) => {
+            setListVagasE(response.data);
+            if (response.data[0]) {
+                { VagasE() }
+            }
+        })
+    }, [])
+
+    const [temVagaE, setTemVagasE] = useState(false);
+
+    const VagasE = () => {
+        setTemVagasE(true);
+    };
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
     const validationStatus = yup.object().shape({
         bloco: yup
             .string()
@@ -103,112 +169,6 @@ export default function Parking() {
         });
     };
 
-    const [dis, setDisp] = useState(false);
-
-    const Disponivel = () => {
-        setDisp(true);
-        setIndisp(false);
-        setOcup(false);
-    };
-
-    const [indis, setIndisp] = useState(false);
-
-    const Indisponivel = () => {
-        setIndisp(true);
-        setDisp(false);
-        setOcup(false);
-    };
-
-    const [ocupp, setOcup] = useState(false);
-
-    const Ocupado = () => {
-        setOcup(true);
-        setDisp(false);
-        setIndisp(false);
-    };
-
-    //////////////////////////////////////////////////////////
-
-    const [dis2, setDisp2] = useState(false);
-
-    const Disponivel2 = () => {
-        setDisp2(true);
-        setIndisp2(false);
-        setOcup2(false);
-    };
-
-    const [indis2, setIndisp2] = useState(false);
-
-    const Indisponivel2 = () => {
-        setIndisp2(true);
-        setDisp2(false);
-        setOcup2(false);
-    };
-
-    const [ocupp2, setOcup2] = useState(false);
-
-    const Ocupado2 = () => {
-        setOcup2(true);
-        setDisp2(false);
-        setIndisp2(false);
-    };
-
-    //////////////////////////////////////////////////////////
-
-    const [dis3, setDisp3] = useState(false);
-
-    const Disponivel3 = () => {
-        setDisp3(true);
-        setIndisp3(false);
-        setOcup3(false);
-    };
-
-    const [indis3, setIndisp3] = useState(false);
-
-    const Indisponivel3 = () => {
-        setIndisp3(true);
-        setDisp3(false);
-        setOcup3(false);
-    };
-
-    const [ocupp3, setOcup3] = useState(false);
-
-    const Ocupado3 = () => {
-        setOcup3(true);
-        setDisp3(false);
-        setIndisp3(false);
-    };
-
-    //////////////////////////////////////////////////////////
-
-    const [dis4, setDisp4] = useState(false);
-
-    const Disponivel4 = () => {
-        setDisp4(true);
-        setIndisp4(false);
-        setOcup4(false);
-    };
-
-    const [indis4, setIndisp4] = useState(false);
-
-    const Indisponivel4 = () => {
-        setIndisp4(true);
-        setDisp4(false);
-        setOcup4(false);
-    };
-
-    const [ocupp4, setOcup4] = useState(false);
-
-    const Ocupado4 = () => {
-        setOcup4(true);
-        setDisp4(false);
-        setIndisp4(false);
-    };
-
-    const ocup = <img src={Ocup} alt="Ocup" width="20" height="25" />;
-    const disp = <img src={Free} alt="Free" width="20" height="25" />;
-    const indisp = <img src={Indisp} alt="Indisp" width="20" height="25" />;
-
     return (
         <div class="main">
             <Menu />
@@ -223,7 +183,7 @@ export default function Parking() {
                     {refreshImg()}
                 </>
                 <Carousel>
-                    <Carousel.Item interval={100000}>
+                    {temVagaA ? <Carousel.Item interval={100000}>
                         <div id="NomeBloco">
                             <a>Bloco A</a>
                         </div>
@@ -241,8 +201,8 @@ export default function Parking() {
                                 })}
                             </div>
                         </div>
-                    </Carousel.Item>
-                    <Carousel.Item interval={100000}>
+                    </Carousel.Item> : ""}
+                    {temVagaB ? <Carousel.Item interval={100000}>
                         <div id="NomeBloco">
                             <a>Bloco B</a>
                         </div>
@@ -260,8 +220,8 @@ export default function Parking() {
                                 })}
                             </div>
                         </div>
-                    </Carousel.Item>
-                    <Carousel.Item interval={100000}>
+                    </Carousel.Item> : ""}
+                    {temVagaC ? <Carousel.Item interval={100000}>
                         <div id="NomeBloco">
                             <a>Bloco C</a>
                         </div>
@@ -279,7 +239,45 @@ export default function Parking() {
                                 })}
                             </div>
                         </div>
-                    </Carousel.Item>
+                    </Carousel.Item> : ""}
+                    {temVagaD ? <Carousel.Item interval={100000}>
+                        <div id="NomeBloco">
+                            <a>Bloco D</a>
+                        </div>
+                        <div id="Planta" style={{ backgroundColor: `#161A25` }}>
+                            <div className='parent'>
+                                {typeof listVagasD !== "undefined" && listVagasD.map((value) => {
+                                    return (
+                                        <Card
+                                            key={value.codigo}
+                                            listCard={listVagasD}
+                                            setListVagasD={setListVagasD}
+                                            codigo={value.codigo}
+                                            status={value.status}
+                                        ></Card>);
+                                })}
+                            </div>
+                        </div>
+                    </Carousel.Item> : ""}
+                    {temVagaE ? <Carousel.Item interval={100000}>
+                        <div id="NomeBloco">
+                            <a>Bloco E</a>
+                        </div>
+                        <div id="Planta" style={{ backgroundColor: `#161A25` }}>
+                            <div className='parent'>
+                                {typeof listVagasE !== "undefined" && listVagasE.map((value) => {
+                                    return (
+                                        <Card
+                                            key={value.codigo}
+                                            listCard={listVagasE}
+                                            setListVagasE={setListVagasE}
+                                            codigo={value.codigo}
+                                            status={value.status}
+                                        ></Card>);
+                                })}
+                            </div>
+                        </div>
+                    </Carousel.Item> : ""}
                 </Carousel>
                 <div className='parent2'>
                     <div className="Stat-box">
