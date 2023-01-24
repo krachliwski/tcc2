@@ -3,6 +3,7 @@ import './payment.css';
 import PIX from "react-qrcode-pix";
 import geraExtrato from '../../components/Functions/extrato';
 import Axios from 'axios';
+import swal from 'sweetalert2';
 
 const now = new Date().getTime().toString();
 
@@ -41,14 +42,19 @@ export default function PaymentArea() {
 
             if (codigo == "0") {
                 ValorPagar = 0;
+                {naoPaga()}
             } else if (codigo == "1") {
                 ValorPagar = 5;
+                {Paga()}
             } else if (codigo == "2") {
                 ValorPagar = 10;
+                {Paga()}
             } else if (codigo == "3") {
                 ValorPagar = 15;
+                {Paga()}
             } else {
                 ValorPagar = 20;
+                {Paga()}
             }
         });
         { handleGenerate() }
@@ -74,15 +80,30 @@ export default function PaymentArea() {
         const res = geraExtrato(Bloco, Vaga, DataE, HoraE, DataS, HoraS, ValorPagar, Perm);
     }
 
+    const naoPaga = () => {
+        swal.fire({
+            icon: 'info',
+            title: "Permanência Gratuita!",
+            text: 'Permanência: ' + Perm,
+            confirmButtonText: 'OK'
+        });
+    }
+
+    const Paga = () => {
+        swal.fire({
+            icon: 'info',
+            title: 'Valor a Pagar: R$' + ValorPagar,
+            text: 'Permanência: ' + Perm,
+            confirmButtonText: 'OK'
+        });
+    }
+
     return (
         <>
             <div className='container-payment'>
                 <div className='border-payment'>
                     <div className='payment-title'>
                         <h3>Bem-vindo ao pagamento automatizado</h3>
-                        <h3>Permanência: {Perm}</h3>
-                        <span>Valor da estadia</span>
-                        <h3>R${Valor}</h3>
                     </div>
                     <div className='payment-body'>
                         {!generate && (
