@@ -38,7 +38,7 @@ function login() {
                     if (result.isConfirmed) {
                         window.location.href = "/ParkingAdm";
                     } else {
-                        
+
                     }
                 });
             } else {
@@ -60,9 +60,14 @@ function login() {
     const handleClickRegister = (values) => {
         Axios.post("http://localhost:3001/register", {
             nome: values.nome,
+            email: values.email,
+            telefone: values.telefone,
+            cpf: values.cpf,
+            endereco: values.endereco,
+            cep: values.cep,
             senha: values.senha
         }).then((response) => {
-            swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 1500 }).then(okay => { window.location.href = "/login"; });;
+            swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 1500 });
         });
     };
 
@@ -70,6 +75,23 @@ function login() {
         nome: yup
             .string()
             .required("O nome é obrigatório"),
+        email: yup
+            .string()
+            .required("O email é obrigatório"),
+        telefone: yup
+            .string()
+            .required("O telefone é obrigatório"),
+        cpf: yup
+            .string()
+            .required("O CPF é obrigatório")
+            .min(14, "CPF fora do padrão")
+            .max(14, "CPF fora do padrão"),
+        endereco: yup
+            .string()
+            .required("O endereço é obrigatório"),
+        cep: yup
+            .string()
+            .required("O CEP é obrigatório"),
         senha: yup
             .string()
             .min(8, "A senha deve ter pelo menos 8 caracteres")
@@ -115,6 +137,31 @@ function login() {
                                         <ErrorMessage component="span" name="nome" className="form-erro" />
                                     </div>
                                     <div>
+                                        <label for="login">E-mail</label>
+                                        <Field type="email" name="email" id="email" class="form-control" placeholder="meuemail@mail.com"/>
+                                        <ErrorMessage component="span" name="email" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="login">Telefone</label>
+                                        <Field type="tel" name="telefone" id="telefone" class="form-control" placeholder="00000-0000" pattern="[0-9]{5}-[0-9]{4}"/>
+                                        <ErrorMessage component="span" name="telefone" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="login">CPF</label>
+                                        <Field type="text" name="cpf" id="cpf" class="form-control" placeholder="000.000.000-00"/>
+                                        <ErrorMessage component="span" name="cpf" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="login">Endereço</label>
+                                        <Field type="text" name="endereco" id="endereco" class="form-control" />
+                                        <ErrorMessage component="span" name="endereco" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="login">CEP</label>
+                                        <Field type="number" name="cep" id="cep" class="form-control" placeholder="00000000"/>
+                                        <ErrorMessage component="span" name="cep" className="form-erro" />
+                                    </div>
+                                    <div>
                                         <label for="senha">Senha</label>
                                         <Field type="password" name="senha" id="senha" class="form-control" />
                                         <ErrorMessage component="span" name="senha" className="form-erro" />
@@ -129,8 +176,12 @@ function login() {
                                     </div>
                                 </Form>
                             </Formik>
+                            <Button href="UserAlt">Alterar Usuário</Button>
                         </div>
-                        : <h3>Faça Login para cadastrar outro usuário</h3>
+                        : <div>
+                            <Button href="User">Esqueci minha senha</Button>
+                            <h3>Faça Login para cadastrar outro usuário</h3>
+                        </div>
                     }
                 </div>
             </div>

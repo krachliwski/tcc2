@@ -48,7 +48,7 @@ app.post("/vaga", (req, res) => {
     (err, result) => {
       if (err) {
         res.send(err);
-      } 
+      }
       if (result.length == 0) {
         db.query("INSERT INTO vaga_status (bloco, codigo, status) VALUES (?, ?, 'D')", [bloco, vaga]);
         res.send("Vaga Cadastrada!");
@@ -66,7 +66,7 @@ app.post("/excluivaga", (req, res) => {
     (err, result) => {
       if (err) {
         res.send(err);
-      } 
+      }
       if (result.length == 1) {
         db.query("DELETE FROM vaga_status WHERE bloco = ? AND codigo = ?", [bloco, vaga]);
         res.send("Vaga Excluída!");
@@ -80,7 +80,7 @@ app.get("/getCards", (req, res) => {
   let SQL = "SELECT status, codigo FROM vaga_status WHERE bloco = 'A'"
 
   db.query(SQL, (err, result) => {
-    if(err) console.log(err);
+    if (err) console.log(err);
     else res.send(result);
   })
 })
@@ -89,7 +89,7 @@ app.get("/getCardsB", (req, res) => {
   let SQL = "SELECT status, codigo FROM vaga_status WHERE bloco = 'B'"
 
   db.query(SQL, (err, result) => {
-    if(err) console.log(err);
+    if (err) console.log(err);
     else res.send(result);
   })
 })
@@ -98,7 +98,7 @@ app.get("/getCardsC", (req, res) => {
   let SQL = "SELECT status, codigo FROM vaga_status WHERE bloco = 'C'"
 
   db.query(SQL, (err, result) => {
-    if(err) console.log(err);
+    if (err) console.log(err);
     else res.send(result);
   })
 })
@@ -107,7 +107,7 @@ app.get("/getCardsD", (req, res) => {
   let SQL = "SELECT status, codigo FROM vaga_status WHERE bloco = 'D'"
 
   db.query(SQL, (err, result) => {
-    if(err) console.log(err);
+    if (err) console.log(err);
     else res.send(result);
   })
 })
@@ -116,7 +116,7 @@ app.get("/getCardsE", (req, res) => {
   let SQL = "SELECT status, codigo FROM vaga_status WHERE bloco = 'E'"
 
   db.query(SQL, (err, result) => {
-    if(err) console.log(err);
+    if (err) console.log(err);
     else res.send(result);
   })
 })
@@ -216,6 +216,11 @@ app.post("/desocupaVaga", (req, res) => {
 */
 app.post("/register", (req, res) => {
   const nome = req.body.nome;
+  const email = req.body.email;
+  const telefone = req.body.telefone;
+  const endereco = req.body.endereco;
+  const cep = req.body.cep;
+  const cpf = req.body.cpf;
   const senha = req.body.senha;
 
   db.query("SELECT * FROM usuario WHERE nome = ?", [nome],
@@ -225,8 +230,8 @@ app.post("/register", (req, res) => {
       }
       if (result.length == 0) {
         bcrypt.hash(senha, saltRounds, (err, hash) => {
-          db.query("INSERT INTO usuario (nome, senha) VALUES (?, ?)",
-            [nome, hash],
+          db.query("INSERT INTO usuario (nome, email, telefone, endereco, cep, cpf, senha) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            [nome, email, telefone, endereco, cep, cpf, hash],
             (err, result) => {
               if (err) {
                 res.send(err);
@@ -264,4 +269,123 @@ app.post("/login", (req, res) => {
 
 app.listen(3001, () => {
   console.log("TÁ RODANDO JÁ MISÉRA!!!");
+});
+
+
+app.post("/mandaEmail", (req, res) => {
+  const nome = req.body.name;
+  const email = req.body.email;
+
+  db.query("SELECT * FROM usuario WHERE cpf = ? and email = ?", [nome, email], (err, result) => {
+    if (err) {
+      res.send(err);
+    }
+    if (result.length > 0) {
+      res.send("Usuário Logado!");
+    } else {
+      res.send("CPF ou E-Mail inválidos");
+    }
+  });
+});
+
+/*
+app.post("/testeUser", (req, res) => {
+
+  db.query("SELECT nome, senaha FROM usuario WHERE nome = 'Mateus'", (err, result) => {
+    if (err) {
+      res.send(err);
+    }
+    if (result) {
+      bcrypt.compare(senha, result[0].senha, (err, result) => {
+        if (result) {
+          res.send(result);
+        }
+      });
+    }
+  });
+});
+*/
+
+app.post("/update", (req, res) => {
+  const nome = req.body.nome;
+  const email = req.body.email;
+  const telefone = req.body.telefone;
+  const cpf = req.body.cpf;
+  const endereco = req.body.endereco;
+  const cep = req.body.cep;
+
+  db.query("UPDATE usuario SET nome = ?, email = ?, telefone = ?, endereco = ?, cep = ? WHERE cpf = ?",
+    [nome, email, telefone, endereco, cep, cpf],
+    (err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send("Alterado com sucesso!")
+      }
+    });
+});
+
+app.post("/loginSupervisor", (req, res) => {
+  const nome = req.body.nome;
+  const senha = req.body.senha;
+
+  db.query("SELECT * FROM usuario WHERE nome = ?", [nome], (err, result) => {
+    if (err) {
+      res.send(err);
+    }
+    if (result.length > 0) {
+      bcrypt.compare(senha, result[0].senha, (err, result) => {
+        if (result) {
+          res.send("Usuário Logado!");
+        } else {
+          res.send("Nome ou Senha Incorretos!");
+        }
+      });
+    } else {
+      res.send("Usuário não encontrado! Cadastre nos campos abaixo");
+    }
+  });
+});
+
+app.get("/getUsers", (req, res) => {
+  let SQL = "SELECT * FROM usuario WHERE idusuario NOT IN ('83', '92')"
+
+  db.query(SQL, (err, result) => {
+    if (err) console.log(err);
+    else res.send(result);
+  })
+})
+
+app.post("/excluiUser", (req, res) => {
+  const cpf = req.body.cpf;
+
+  db.query("SELECT * FROM usuario WHERE cpf = ?", [cpf],
+    (err, result) => {
+      if (err) {
+        res.send(err);
+      }
+      if (result.length == 1) {
+        db.query("DELETE FROM usuario WHERE cpf = ?", [cpf]);
+        res.send("Usuário Excluído!");
+      } else {
+        res.send("Usuário Inexistente!");
+      }
+    });
+});
+
+app.post("/updateSenha", (req, res) => {
+  const cpf = req.body.cpf;
+  const senha = req.body.senha;
+
+  bcrypt.hash(senha, saltRounds, (err, hash) => {
+    db.query("UPDATE usuario SET senha = ? WHERE cpf = ?",
+      [hash, cpf],
+      (err, result) => {
+        if (err) {
+          res.send(err);
+        } else {
+          res.send("Alterado com sucesso!")
+        }
+      });
+  })
 });

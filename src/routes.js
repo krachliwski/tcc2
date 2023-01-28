@@ -9,6 +9,9 @@ import Login from './pages/Login';
 import Signin from './pages/Signin';
 import Payment from './pages/Payment';
 import Incoming from './pages/Incoming';
+import Usuario from './pages/User';
+import AltUsu from './pages/UserAlt';
+import AltSenhaUsu from './pages/UserSenha';
 
 function RoutesApp() {
     return (
@@ -22,6 +25,9 @@ function RoutesApp() {
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/payment" element={<Payment />} />
                 <Route path="/incoming" element={<Incoming />} />
+                <Route path="/User" element={<Usuario />} />
+                <Route path="/UserAlt" element={<AltUsu />} />
+                <Route path="/UserSenha" element={<AltSenhaUsu />} />
                 <Route path="*" element={<Error />} />
             </Routes>
         </BrowserRouter>

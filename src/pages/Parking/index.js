@@ -25,26 +25,90 @@ export default function Parking() {
   useEffect(() => {
     Axios.get("http://localhost:3001/getCards").then((response) => {
       setListVagas(response.data);
+      if (response.data[0]) {
+        { VagasA() }
+      }
     })
   }, [])
 
+  const [temVagaA, setTemVagasA] = useState(false);
+
+  const VagasA = () => {
+    setTemVagasA(true);
+  };
+  ///////////////////////////////////////////////////////////////////////////////////////////////////
   console.log(listVagasB);
   const [listVagasB, setListVagasB] = useState();
 
   useEffect(() => {
     Axios.get("http://localhost:3001/getCardsB").then((response) => {
       setListVagasB(response.data);
+      if (response.data[0]) {
+        { VagasB() }
+      }
     })
   }, [])
 
+  const [temVagaB, setTemVagasB] = useState(false);
+
+  const VagasB = () => {
+    setTemVagasB(true);
+  };
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
   console.log(listVagasC);
   const [listVagasC, setListVagasC] = useState();
 
   useEffect(() => {
     Axios.get("http://localhost:3001/getCardsC").then((response) => {
       setListVagasC(response.data);
+      if (response.data[0]) {
+        { VagasC() }
+      }
     })
   }, [])
+
+  const [temVagaC, setTemVagasC] = useState(false);
+
+  const VagasC = () => {
+    setTemVagasC(true);
+  };
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+  console.log(listVagasD);
+  const [listVagasD, setListVagasD] = useState();
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/getCardsD").then((response) => {
+      setListVagasD(response.data);
+      if (response.data[0]) {
+        { VagasD() }
+      }
+    })
+  }, [])
+
+  const [temVagaD, setTemVagasD] = useState(false);
+
+  const VagasD = () => {
+    setTemVagasD(true);
+  };
+  /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  console.log(listVagasE);
+  const [listVagasE, setListVagasE] = useState();
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/getCardsE").then((response) => {
+      setListVagasE(response.data);
+      if (response.data[0]) {
+        { VagasE() }
+      }
+    })
+  }, [])
+
+  const [temVagaE, setTemVagasE] = useState(false);
+
+  const VagasE = () => {
+    setTemVagasE(true);
+  };
 
   const ocup = <img src={Ocup} alt="Ocup" width="20" height="25" />;
   const disp = <img src={Free} alt="Free" width="20" height="25" />;
@@ -85,7 +149,7 @@ export default function Parking() {
           </table>
         </div>
         <Carousel>
-          <Carousel.Item interval={100000}>
+          {temVagaA ? <Carousel.Item interval={100000}>
             <div id="NomeBloco">
               <a>Bloco A</a>
             </div>
@@ -103,8 +167,8 @@ export default function Parking() {
                 })}
               </div>
             </div>
-          </Carousel.Item>
-          <Carousel.Item interval={100000}>
+          </Carousel.Item> : ""}
+          {temVagaB ? <Carousel.Item interval={100000}>
             <div id="NomeBloco">
               <a>Bloco B</a>
             </div>
@@ -122,8 +186,8 @@ export default function Parking() {
                 })}
               </div>
             </div>
-          </Carousel.Item>
-          <Carousel.Item interval={100000}>
+          </Carousel.Item> : ""}
+          {temVagaC ? <Carousel.Item interval={100000}>
             <div id="NomeBloco">
               <a>Bloco C</a>
             </div>
@@ -141,7 +205,45 @@ export default function Parking() {
                 })}
               </div>
             </div>
-          </Carousel.Item>
+          </Carousel.Item> : ""}
+          {temVagaD ? <Carousel.Item interval={100000}>
+            <div id="NomeBloco">
+              <a>Bloco D</a>
+            </div>
+            <div id="Planta" style={{ backgroundColor: `#161A25` }}>
+              <div className='parent'>
+                {typeof listVagasD !== "undefined" && listVagasD.map((value) => {
+                  return (
+                    <Card
+                      key={value.codigo}
+                      listCard={listVagasD}
+                      setListVagasD={setListVagasD}
+                      codigo={value.codigo}
+                      status={value.status}
+                    ></Card>);
+                })}
+              </div>
+            </div>
+          </Carousel.Item> : ""}
+          {temVagaE ? <Carousel.Item interval={100000}>
+            <div id="NomeBloco">
+              <a>Bloco E</a>
+            </div>
+            <div id="Planta" style={{ backgroundColor: `#161A25` }}>
+              <div className='parent'>
+                {typeof listVagasE !== "undefined" && listVagasE.map((value) => {
+                  return (
+                    <Card
+                      key={value.codigo}
+                      listCard={listVagasE}
+                      setListVagasE={setListVagasE}
+                      codigo={value.codigo}
+                      status={value.status}
+                    ></Card>);
+                })}
+              </div>
+            </div>
+          </Carousel.Item> : ""}
         </Carousel>
       </div>
       <Footer />
