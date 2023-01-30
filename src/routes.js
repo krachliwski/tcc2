@@ -12,6 +12,8 @@ import Incoming from './pages/Incoming';
 import Usuario from './pages/User';
 import AltUsu from './pages/UserAlt';
 import AltSenhaUsu from './pages/UserSenha';
+import Empresas from './pages/Empresas';
+import AlteraEmpresas from './pages/AlteraEmpresa';
 
 function RoutesApp() {
     return (
@@ -28,6 +30,8 @@ function RoutesApp() {
                 <Route path="/User" element={<Usuario />} />
                 <Route path="/UserAlt" element={<AltUsu />} />
                 <Route path="/UserSenha" element={<AltSenhaUsu />} />
+                <Route path="/Empre" element={<Empresas />} />
+                <Route path="/alterEmp" element={<AlteraEmpresas />} />
                 <Route path="*" element={<Error />} />
             </Routes>
         </BrowserRouter>

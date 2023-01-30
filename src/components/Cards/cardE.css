@@ -1,0 +1,33 @@
+.card--container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.card--container p {
+    color: white;
+}
+
+button {
+    width: 55px;
+}
+
+.Alterar {
+    background-color: green;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.Excluir {
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 20px;
+}

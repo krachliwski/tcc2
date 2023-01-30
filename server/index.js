@@ -5,6 +5,7 @@ const mysql = require("mysql2");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const { query } = require('express');
+const { isEditableInput } = require('@testing-library/user-event/dist/utils');
 const saltRounds = 10;
 
 const db = mysql.createPool({
@@ -267,6 +268,12 @@ app.post("/login", (req, res) => {
   });
 });
 
+/*
+if (result[0].nome == 'Supervisor') {
+      res.send("Logado como Supervisor!")
+    }
+*/
+
 app.listen(3001, () => {
   console.log("TÁ RODANDO JÁ MISÉRA!!!");
 });
@@ -333,16 +340,16 @@ app.post("/loginSupervisor", (req, res) => {
     if (err) {
       res.send(err);
     }
-    if (result.length > 0) {
+    if (result[0].nome == 'Supervisor') {
       bcrypt.compare(senha, result[0].senha, (err, result) => {
         if (result) {
-          res.send("Usuário Logado!");
+          res.send("Logado com Supervisor!");
         } else {
           res.send("Nome ou Senha Incorretos!");
         }
       });
     } else {
-      res.send("Usuário não encontrado! Cadastre nos campos abaixo");
+      res.send("Apenas usuário Supervisor autorizado!");
     }
   });
 });
@@ -388,4 +395,73 @@ app.post("/updateSenha", (req, res) => {
         }
       });
   })
+});
+
+app.post("/criaEmpresa", (req, res) => {
+  const cnpj = req.body.cnpj;
+  const razao = req.body.razao;
+  const nomeF = req.body.nomeF;
+  const ie = req.body.ie;
+
+  db.query("SELECT * FROM empresas WHERE cnpj = ?", [cnpj],
+    (err, result) => {
+      if (err) {
+        res.send(err);
+      }
+      if (result.length == 0) {
+        db.query("INSERT INTO empresas (cnpj, razaoSocial, nomeFantasia, inscricaoEstadual) VALUES (?, ?, ?, ?)",
+          [cnpj, razao, nomeF, ie],
+          (err, result) => {
+            if (err) {
+              res.send(err);
+            }
+            res.send("Cadastrado com sucesso")
+          });
+      } else {
+        res.send("Empresa já existente")
+      }
+    })
+});
+
+app.post("/alteraEmpresa", (req, res) => {
+  const cnpj = req.body.cnpj;
+  const razao = req.body.razao;
+  const nomeF = req.body.nomeF;
+  const ie = req.body.ie;
+
+  db.query("UPDATE empresas SET razaoSocial = ?, nomeFantasia = ?, inscricaoEstadual = ? WHERE cnpj = ?",
+    [razao, nomeF, ie, cnpj],
+    (err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send("Alterado com sucesso!")
+      }
+    });
+});
+
+app.get("/getEmp", (req, res) => {
+  let SQL = "SELECT * FROM empresas"
+
+  db.query(SQL, (err, result) => {
+    if (err) console.log(err);
+    else res.send(result);
+  })
+})
+
+app.post("/excluiEmp", (req, res) => {
+  const cnpj = req.body.cnpj;
+
+  db.query("SELECT * FROM empresas WHERE cnpj = ?", [cnpj],
+    (err, result) => {
+      if (err) {
+        res.send(err);
+      }
+      if (result.length == 1) {
+        db.query("DELETE FROM empresas WHERE cnpj = ?", [cnpj]);
+        res.send("Empresa Excluída!");
+      } else {
+        res.send("Empresa Inexistente!");
+      }
+    });
 });

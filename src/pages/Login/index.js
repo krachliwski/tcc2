@@ -32,8 +32,8 @@ function login() {
                 swal.fire({
                     title: response.data,
                     showDenyButton: true,
-                    confirmButtonText: 'Ir para ADM',
-                    denyButtonText: 'Ficar nesta Página'
+                    confirmButtonText: 'ADM',
+                    denyButtonText: 'Ficar'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         window.location.href = "/ParkingAdm";
@@ -177,6 +177,7 @@ function login() {
                                 </Form>
                             </Formik>
                             <Button href="UserAlt">Alterar Usuário</Button>
+                            <Button href="Empre">Cadastrar Empresa</Button>
                         </div>
                         : <div>
                             <Button href="User">Esqueci minha senha</Button>
