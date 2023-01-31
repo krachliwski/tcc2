@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './login.css';
+import './userCad.css';
 import Menu from '../../components/Menu/menu';
 import { Button } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -8,7 +8,7 @@ import * as yup from "yup";
 import swal from 'sweetalert2';
 import Footer from '../Footer/index.js';
 
-function login() {
+function UserCad() {
 
     const [logado, setLogado] = useState(false);
 
@@ -23,24 +23,15 @@ function login() {
     };
 
     const handleClickLogin = (values) => {
-        Axios.post("http://localhost:3001/login", {
+        Axios.post("http://localhost:3001/loginSupervisor", {
             nome: values.nome,
             senha: values.senha
         }).then((response) => {
-            if (response.data == "Usuário Logado!") {
+            if (response.data == "Logado com Supervisor!") {
                 { Autenticado() }
                 swal.fire({
-                    title: response.data,
-                    showDenyButton: true,
-                    confirmButtonText: 'ADM',
-                    denyButtonText: 'Ficar'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = "/ParkingAdm";
-                    } else {
-
-                    }
-                });
+                    title: response.data
+                })
             } else {
                 swal.fire({ icon: 'info', title: response.data, showConfirmButton: false, timer: 2000 });
             }
@@ -128,12 +119,58 @@ function login() {
                     <br />
                     {logado
                         ? <div>
-                            <Button href="UserCad">Cadastrar Usuário</Button>
-                            <Button href="Empre">Cadastrar Empresa</Button>
+                            <h3>Cadastrar</h3>
+                            <Formik initialValues={{}} onSubmit={handleClickRegister} validationSchema={validationRegister}>
+                                <Form name="formLogin" method="post" data-parsley-validate="">
+                                    <div>
+                                        <label for="login">Nome</label>
+                                        <Field type="text" name="nome" id="login" class="form-control" />
+                                        <ErrorMessage component="span" name="nome" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="login">E-mail</label>
+                                        <Field type="email" name="email" id="email" class="form-control" placeholder="meuemail@mail.com"/>
+                                        <ErrorMessage component="span" name="email" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="login">Telefone</label>
+                                        <Field type="tel" name="telefone" id="telefone" class="form-control" placeholder="00000-0000" pattern="[0-9]{5}-[0-9]{4}"/>
+                                        <ErrorMessage component="span" name="telefone" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="login">CPF</label>
+                                        <Field type="text" name="cpf" id="cpf" class="form-control" placeholder="000.000.000-00"/>
+                                        <ErrorMessage component="span" name="cpf" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="login">Endereço</label>
+                                        <Field type="text" name="endereco" id="endereco" class="form-control" />
+                                        <ErrorMessage component="span" name="endereco" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="login">CEP</label>
+                                        <Field type="number" name="cep" id="cep" class="form-control" placeholder="00000000"/>
+                                        <ErrorMessage component="span" name="cep" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="senha">Senha</label>
+                                        <Field type="password" name="senha" id="senha" class="form-control" />
+                                        <ErrorMessage component="span" name="senha" className="form-erro" />
+                                    </div>
+                                    <div>
+                                        <label for="senha">Confirme a Senha</label>
+                                        <Field type="password" name="confirmation" id="senha" class="form-control" />
+                                        <ErrorMessage component="span" name="confirmation" className="form-erro" />
+                                    </div>
+                                    <div className="buttons">
+                                        <Button type="submit">Concluir</Button>
+                                        <Button href="UserAlt">Alterar Usuário</Button>
+                                    </div>
+                                </Form>
+                            </Formik>
                         </div>
                         : <div>
-                            <Button href="User">Esqueci minha senha</Button>
-                            <h3>Faça Login para cadastrar outro usuário</h3>
+                            <h3>Entre com Supervisor para cadastrar um usuário</h3>
                         </div>
                     }
                 </div>
@@ -143,4 +180,4 @@ function login() {
     )
 }
 
-export default login;
+export default UserCad;

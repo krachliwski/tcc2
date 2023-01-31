@@ -1,0 +1,53 @@
+.container-login {
+    position: absolute;
+    height: fit-content;
+    width: 100vw;
+    background-image: url(../../images/background1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+thead {
+	background: #ccc;
+}
+
+label {
+	margin-top: 10px;
+    /*font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;*/
+    font-family: fantasy, monospace;
+    font-size: 20px;
+}
+
+.Login-Box {
+    padding-top: 110px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    color: white;
+    margin-bottom: 60px;
+}
+
+.Login-Box h3 {
+    margin-top: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    margin-left: -10px;
+}
+
+.form-erro {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    border-color: black;
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 0 0 2px white;
+}

@@ -14,6 +14,7 @@ import AltUsu from './pages/UserAlt';
 import AltSenhaUsu from './pages/UserSenha';
 import Empresas from './pages/Empresas';
 import AlteraEmpresas from './pages/AlteraEmpresa';
+import CadastrarUsuario from './pages/UserCad';
 
 function RoutesApp() {
     return (
@@ -32,6 +33,7 @@ function RoutesApp() {
                 <Route path="/UserSenha" element={<AltSenhaUsu />} />
                 <Route path="/Empre" element={<Empresas />} />
                 <Route path="/alterEmp" element={<AlteraEmpresas />} />
+                <Route path="/UserCad" element={<CadastrarUsuario />} />
                 <Route path="*" element={<Error />} />
             </Routes>
         </BrowserRouter>

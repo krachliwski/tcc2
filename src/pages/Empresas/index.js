@@ -121,7 +121,7 @@ function empre() {
                                     </div>
                                     <div className="buttons">
                                         <Button type="submit">Cadastrar</Button>
-                                        <Button type="submit" href="/alterEmp">Alterar</Button>
+                                        <Button type="submit" href="/alterEmp">Alterar Empresa</Button>
                                     </div>
                                 </Form>
                             </Formik>
